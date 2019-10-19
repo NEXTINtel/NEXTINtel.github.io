@@ -24,7 +24,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - nextintel@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -36,9 +41,10 @@
   </component>
   <component name="ProjectId" id="1Rmw4piW3fnvEYWWHKcYYCCMXvb" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/notes/Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
@@ -47,6 +53,10 @@
       <recent name="C:\AppServ\www\test\notes\math" />
       <recent name="C:\AppServ\www\test\notes\DeepLearning" />
       <recent name="C:\AppServ\www\test\notes\os" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\AppServ\www\NEXTINtel\notes" />
+      <recent name="C:\AppServ\www\test\php" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -74,7 +84,7 @@
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/login.html" useBuiltInWebServerPort="true">
+    <configuration name="login1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/login1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -82,10 +92,25 @@
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.Manjaro基本配置.html" />
         <item itemvalue="JavaScript Debug.OS.html" />
-        <item itemvalue="JavaScript Debug.login.html" />
+        <item itemvalue="JavaScript Debug.login1.html" />
         <item itemvalue="JavaScript Debug.Deepin基本配置.html" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bb0b79ab" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -102,7 +127,14 @@
       <workItem from="1571105863722" duration="9257000" />
       <workItem from="1571124954508" duration="10211000" />
       <workItem from="1571218541216" duration="2873000" />
-      <workItem from="1571234547732" duration="1249000" />
+      <workItem from="1571234547732" duration="1708000" />
+      <workItem from="1571307263092" duration="1248000" />
+      <workItem from="1571320117016" duration="11192000" />
+      <workItem from="1571333466705" duration="4354000" />
+      <workItem from="1571362508619" duration="11051000" />
+      <workItem from="1571388557035" duration="9262000" />
+      <workItem from="1571446477698" duration="51000" />
+      <workItem from="1571446671628" duration="7527000" />
     </task>
     <servers />
   </component>
