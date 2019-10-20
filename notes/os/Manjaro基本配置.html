@@ -248,37 +248,92 @@
                                         <li>By Jone Oilia</li-->
                                     </ul>
                                     <h3>Manjaro OS基本配置</h3>
-                                    <p>&nbsp; &nbsp; &nbsp; &nbsp; 作为Arch Linux的衍生版本，Manjaro继承了Linux的安全稳定，同时摒弃了Arch对用户的非友好，提供了优质的GUI。Manjaro一共有4个版本：XFCE、GNOME、KDE、Architect，让用户可以有不同的选择，提供了超高的自由度。下面介绍安装KDE版本后的一些基本配置：</p>
+                                        <p>&nbsp; &nbsp; &nbsp; &nbsp; 作为Arch Linux的衍生版本，Manjaro继承了Linux的安全稳定，同时摒弃了Arch对用户的非友好，提供了优质的GUI。Manjaro一共有4个版本：XFCE、GNOME、KDE、Architect，让用户可以有不同的选择，提供了超高的自由度。下面介绍安装KDE版本后的一些基本配置：</p>
+
+                                    <blockquote>Manjaro安装时的一些注意事项</blockquote>
+                                    <h4>1：含N卡的计算机安装时卡logo无法进入</h4>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决方法：(1)开机进入系统引导界面后，按“e”进入grub编辑模式，<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)找到quiet,在其后空一格添加"nouveau.modeset=0"，<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)按F10或Ctrl+x退出编辑</p>
+                                    <h4>2：安装好系统避免每次进入系统都操作上一步</h4>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决办法：(1)打开etc/default/grub<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在GRUB_CMDLINE_LINUX_DEFAULT的属性中空一格添加“pci=noacpi”<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)终端执行：sudo grub-mkconfig</p>
+                                    <h4>3：Manjaro安装/更新完成后重启报错：can't access tty,job control turned off</h4>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blog.csdn.net/Core00077/article/details/85228956">Manjaro解决tty报错</a></p>
+
+
+                                    <blockquote>Manjro安装后的配置步骤</blockquote>
                                     <h4>1：切换软件源，提高网速，防止后面更新系统时出现超时bug以及UI美化时主题难以下载</h4>
-                                        <p>&nbsp; &nbsp; &nbsp; &nbsp; sudo pacman-mirrors -i -c China -m rank</p>
-                                        <p>&nbsp; &nbsp; &nbsp; &nbsp; 全部勾选即可</p>
-                                    <h4>2：通过添加/删除软件来更新系统，其它方式目前会出现bug</h4>
+                                        <p>&nbsp; &nbsp; &nbsp; &nbsp; (1)执行：sudo pacman-mirrors -i -c China -m rank</p>
+                                        <p>&nbsp; &nbsp; &nbsp; &nbsp; (2)弹出选择框后，全部勾选即可</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)打开/etc/pacman.conf文件，粘贴下面3行代码，然后保存:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[archlinuxcn]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SigLevel = Optional TrustedOnly<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server=https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)执行：sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring</p>
+                                    <h4>2：通过开始菜单中的"添加/删除软件"来更新系统，其它方式目前会出现bug</h4>
                                     <h4>3：更新系统后会出现中文显示乱码，用以下命令修复：</h4>
-                                        <p>pacman -S wqy-microhei</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pacman -S wqy-microhei</p>
                                     <h4>4：重启系统（此步必须完成，否则后面会打不开文件夹）</h4>
                                     <h4>5：安装搜狗中文输入法</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：sudo pacman -S qtwebkit-bin</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)执行：sudo pacman -S fcitx-sogoupinyin fcitx-configtool fcitx-im fcitx-sogoupinyin</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)执行：sudo pacman -U https://arch-archive.tuna.tsinghua.edu.cn/2019/04-29/community/os/x86_64/fcitx-qt4-4.2.9.6-1-x86_64.pkg.tar.xz</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)打开/etc/environment，粘贴如下内容,并保存：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export GTK_IM_MODULE=fcitx<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export QT_IM_MODULE=fcitx<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export XMODIFIERS="@im=fcitx"</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)执行：qtconfig-qt4</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)在出现的图形化界面中找到Interface选项，找到Defult Input Method并将其设置为fcitx，点击左上角保存即可</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)重启计算机即可正常使用</p>
                                     <h4>6：打开“系统设置”，进行系统UI美化</h4>
-                                    <h4>7：配置java环境</h4>
-                                        <p>终端输入命令：yaourt jdk</p>
-                                        <p>选择想要安装的jdk版本即可</p>
-                                        <p>最后输入java以验证java环境是否配置成功</p>
-                                    <h4>8：安装chrome</h4>
-                                        <p>pacman -S google-chrome</p>
-                                    <h4>9：安装vim</h4>
-                                        <p>pacman -S vim</p>
-                                    <h4>10：安装visual studio</h4>
-                                        <p>pacman -S visual-studio-code-bin</p>
-                                    <h4>11：安装网易云音乐</h4>
-                                        <p>pacman -S netease-cloud-music</p>
-                                    <h4>12：安装teamviewer</h4>
-                                        <p>pacman -S teamviewer</p>
-                                    <h4>13：安装VMware Pro ：https://www.jianshu.com/p/de571b44ab60</h4>
-                                    <h4>14：安装idea：    https://www.jianshu.com/p/12493db8a701</h4>
-                                    <h4>15：安装kvm:　　https://ywnz.com/linuxjc/4953.html</h4>
-                                    <h4>16：安装sublime text：https://www.jianshu.com/p/6b287a472b33</h4>
+                                    <h4>7：用yaourt命令代替pacman命令(让命令简洁化)：</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo pacman -S yaourt</p>
+                                    <h4>8：配置java环境</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)终端输入命令：yaourt jdk</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择想要安装的jdk版本即可</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)最后输入java以验证java环境是否配置成功</p>
+                                    <h4>9：安装chrome</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S google-chrome</p>
+                                    <h4>10：安装vim</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S vim</p>
+                                    <h4>11：安装visual studio code</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S visual-studio-code-bin</p>
+                                    <h4>12：安装网易云音乐</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S netease-cloud-music</p>
+                                    <h4>13：安装teamviewer</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S teamviewer</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：如果无法连接到计算机请执行如下步骤(执行前请彻底关闭teamviewer)：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：sudo systemctl stop teamviewerd.service<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)执行：sudo systemctl start teamviewerd.service</p>
+                                    <h4>14：安装VMware Pro </h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：sudo pacman -S fuse2 gtkmm  pcsclite libcanberra</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)查看内核版本：uname -r</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)执行(注意选择第(2)步中指定内核版本)：sudo pacman -S linux-headers</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)执行(如果已有，可不执行)：yaourt -S yay</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)执行：yay -S --noconfirm --needed ncurses5-compat-libs</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行：yay -S vmware-workstation</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)为相应的服务设置开机启动：sudo systemctl enable vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8)开启相应服务：sudo systemctl start  vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(9)查看服务状态：sudo systemctl status vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10)重启系统以加载VNware模块</p>
+                                    <h4>15：安装Jetbrains系列软件(以idea为例)</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)官网下载idea安装包(后缀名：xxx.tar.gz)<a href="https://www.jetbrains.com/idea/download/#section=linux">idea安装包下载</a></p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在opt下创建Intellij文件夹：sudo mkdir /opt/Intellij</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)解压到创建好的的指定文件夹：sudo tar -zxvf xxx.tar.gz -C /opt/Intellij</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)切换到解压后的文件夹：cd /opt/Intellij/xxx</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)给脚本安装程序赋予执行权限：sudo chmod a=+rx bin/idea.sh </p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行脚本安装程序：bin/idea.sh</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意：在GUI安装界面注意勾选勾选Create a desktop entry for integration with system application menu 和 for all users (requires superuser privileges) 以使得可以通过图标来使用idea</p>
+                                    <h4>16：安装kvm:</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装KVM所需的所有软件包：sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)安装ebtables和iptables软件包：sudo pacman -S ebtables iptables</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)打开etc/pacman.conf,粘贴如下命令并保存：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[archlinuxfr]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SigLevel = Never<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server = http://repo.archlinux.fr/$arch</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)更新Pacman数据库：sudo pacman -Syy</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)使用AUR帮助程序安装libguestfs工具：yaourt -S --noconfirm --needed libguestfs</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)使libvirtd服务开机启动：sudo systemctl enable libvirtd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)启用libvirtd服务：sudo systemctl start libvirtd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8)打开/etc/libvirt/libvirtd.conf，替换或增添如下内容：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将UNIX域套接字组所有权设置为libvirt：unix_sock_group = "libvirt"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置R/W套接字的UNIX套接字权限：unix_sock_rw_perms = "0770"</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(9)将当前用户帐户添加到libvirt组：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo usermod -a -G libvirt $(whoami)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newgrp libvirt</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10)重启libvirt守护进程：sudo systemctl restart libvirtd.service</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(11)启用虚拟化嵌套：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo modprobe -r kvm_intel<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo modprobe kvm_intel nested=1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf&nbsp;选择Y即可</p>
+                                    <h4>17：安装Android Studio</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yaourt -S android-studio</p>
+                                    <h4>18：安装sublime text</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装GPG key：curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择稳定版本：echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)更新并安装：sudo pacman -Syu sublime-text</p>
 
-                                    <blockquote>To be successful in real estate, you must always and consistently put your clients’ best interests first. When you do, your personal needs will be realized beyond your greatest expectations.</blockquote>
-                                    <div class="two-column">
+                                    <!--div class="two-column">
                                         <div class="row">
                                             <div class="image-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                                                 <figure class="image"><img src="../../images/icons/empty.png" data-src="../../images/resource/post-image-1.jpg" alt=""></figure>
@@ -288,14 +343,14 @@
                                                 <p>We do what is best for our clients, in order to get full satisfaction and perfection. Our primary goal is to make thing work and make them happy on the eve of a Nantucket voyage, I regarded those marble tablets, and by the murky light of that darkened, doleful day read the fate of the whalemen who had gone before me.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p>The look and feel of a space is created by the way the various items in that room are positioned. If you put them in the wrong place you can instantly diminish the overall appearance of the area, regardless of whether the items individually are stylish and on-trend.</p>
+                                    </div-->
+                                    <!--p>The look and feel of a space is created by the way the various items in that room are positioned. If you put them in the wrong place you can instantly diminish the overall appearance of the area, regardless of whether the items individually are stylish and on-trend.</p-->
                                 </div>
                             </div>
                         </div>
 
                         <!-- Post Share Option -->
-                        <div class="post-share-options clearfix">
+                        <!--div class="post-share-options clearfix">
                             <div class="pull-left clearfix">
                                 <span class="icon fa fa-tags"></span>
                                 <ul class="tags">
@@ -314,10 +369,10 @@
                                     <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div-->
 
                         <!-- Blog Post Controls-->
-                        <div class="blog-post-controls">
+                        <!--div class="blog-post-controls">
                             <div class="inner clearfix">
                                 <div class="prev-post">
                                     <div class="thumb"><img src="../../images/icons/empty.png" data-src="../../images/resource/prev-post.jpg" alt=""></div>
@@ -331,17 +386,17 @@
                                     <span class="title">Next</span>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
                         <!--Comments Area-->
-                        <div class="comments-area">
+                        <!--div class="comments-area">
 
                             <div class="group-title">
                                 <h3>Recent Comment: 03</h3>
-                            </div>
+                            </div-->
 
                             <!--Comment Box-->
-                            <div class="comment-box">
+                            <!--div class="comment-box">
                                 <div class="comment">
                                     <div class="author-thumb">
                                         <img src="../../images/icons/empty.png" data-src="../../images/resource/thumb-1.jpg" alt="">
@@ -352,10 +407,10 @@
                                         <div class="text">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely fun deliverables for real-time schemas.</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div-->
 
                             <!--Comment Box-->
-                            <div class="comment-box reply-comment">
+                            <!--div class="comment-box reply-comment">
                                 <div class="comment">
                                     <div class="author-thumb">
                                         <img src="../../images/icons/empty.png" data-src="../../images/resource/thumb-2.jpg" alt="">
@@ -366,10 +421,10 @@
                                         <div class="text">Dramatically maintain clicks-and-mortar solutions without any of functional solutions.</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div-->
 
                             <!--Comment Box-->
-                            <div class="comment-box">
+                            <!--div class="comment-box">
                                 <div class="comment">
                                     <div class="author-thumb">
                                         <img src="../../images/icons/empty.png" data-src="../../images/resource/thumb-3.jpg" alt="">
@@ -381,16 +436,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
                         <!--End Comments Area-->
 
                         <!-- Comment Form -->
-                        <div class="comment-form">
+                        <!--div class="comment-form">
                             <div class="group-title">
                                 <h3>Leave a Comment</h3>
-                            </div>
+                            </div-->
                             <!--Comment Form-->
-                            <form method="post" action="../../contact.html">
+                            <!--form method="post" action="../../contact.html">
                                 <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 col-sm-12">
                                         <input type="text" name="username" placeholder="Full Name" required>
@@ -414,7 +469,7 @@
                                 </div>
                             </form>
 
-                        </div>
+                        </div-->
                         <!--End Comment Form -->
                     </div>
                 </div>
@@ -485,7 +540,7 @@
                         </div-->
 
                         <!-- Tags -->
-                        <div class="sidebar-widget tags">
+                        <!--div class="sidebar-widget tags">
                             <div class="sidebar-title"><h2>标签</h2></div>
                             <ul class="tag-list clearfix">
                                 <li><a href="#">Apartment</a></li>
@@ -497,7 +552,7 @@
                                 <li><a href="#">Villas</a></li>
                                 <li><a href="#">Market</a></li>
                             </ul>
-                        </div>
+                        </div-->
                     </aside>
                 </div>
             </div>

@@ -71,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.Manjaro基本配置.html">
     <configuration name="Deepin基本配置.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/notes/os/Deepin基本配置.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -89,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.Manjaro基本配置.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.OS.html" />
         <item itemvalue="JavaScript Debug.login1.html" />
         <item itemvalue="JavaScript Debug.Deepin基本配置.html" />
@@ -135,7 +135,8 @@
       <workItem from="1571388557035" duration="9262000" />
       <workItem from="1571446477698" duration="51000" />
       <workItem from="1571446671628" duration="7527000" />
-      <workItem from="1571479419433" duration="3825000" />
+      <workItem from="1571479419433" duration="4426000" />
+      <workItem from="1571537069315" duration="10866000" />
     </task>
     <servers />
   </component>
