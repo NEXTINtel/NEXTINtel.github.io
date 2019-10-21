@@ -276,17 +276,17 @@
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pacman -S wqy-microhei</p>
                                     <h4>4：重启系统（此步必须完成，否则后面会打不开文件夹）</h4>
                                     <h4>5：进入系统设置，更新软件包，让火狐等变成中文版</h4>
-                                    <h4>6：安装搜狗中文输入法</h4>
-                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：sudo pacman -S qtwebkit-bin</p>
+                                    <h4>6：用yaourt命令代替pacman命令(让命令简洁化)：</h4>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo pacman -S yaourt</p>
+                                    <h4>7：安装搜狗中文输入法</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：yaourt -S qtwebkit-bin</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)执行：sudo pacman -S fcitx-sogoupinyin fcitx-configtool fcitx-im fcitx-sogoupinyin</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)执行：sudo pacman -U https://arch-archive.tuna.tsinghua.edu.cn/2019/04-29/community/os/x86_64/fcitx-qt4-4.2.9.6-1-x86_64.pkg.tar.xz</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)打开/etc/environment，粘贴如下内容,并保存：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export GTK_IM_MODULE=fcitx<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export QT_IM_MODULE=fcitx<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;export XMODIFIERS="@im=fcitx"</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)执行：qtconfig-qt4</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)在出现的图形化界面中找到Interface选项，找到Defult Input Method并将其设置为fcitx，点击左上角保存即可</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)重启计算机即可正常使用</p>
-                                    <h4>7：打开“系统设置”，进行系统UI美化</h4>
-                                    <h4>8：用yaourt命令代替pacman命令(让命令简洁化)：</h4>
-                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo pacman -S yaourt</p>
+                                    <h4>8：打开“系统设置”，进行系统UI美化</h4>
                                     <h4>9：配置java环境</h4>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)终端输入命令：yaourt jdk</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择想要安装的jdk版本即可</p>
