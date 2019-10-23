@@ -321,6 +321,7 @@
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)给脚本安装程序赋予执行权限：sudo chmod a=+rx bin/idea.sh </p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行脚本安装程序：bin/idea.sh</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意：在GUI安装界面注意勾选勾选Create a desktop entry for integration with system application menu 和 for all users (requires superuser privileges) 以使得可以通过图标来使用idea</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附：<a href="https://www.jiweichengzhu.com/article/eb340e382d1d456c84a1d190db12755c">idea激活码</a></p>
                                     <h4>17：安装kvm:</h4>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装KVM所需的所有软件包：sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)安装ebtables和iptables软件包：sudo pacman -S ebtables iptables</p>
@@ -339,6 +340,17 @@
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装GPG key：curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择稳定版本：echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf</p>
                                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)更新并安装：sudo pacman -Syu sublime-text</p>
+                                    <h4>20：安装配置tomcat</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)去官网下载tomcat压缩包(后缀名：tar.gz)<a href="https://tomcat.apache.org/download-90.cgi">tomcat官网下载</a></p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在opt文件夹下创建tomcat文件夹：sudo mkdir /opt/tomcat</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)将下载好的压缩包解压到第(2)步创建好的文件夹：sudo tar -zxvf xxx.tar.gz -C /opt/tomcat</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)切换到解压后文件夹的根目录：cd /opt/tomcat/xxx</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)赋予安装文件执行权限：sudo chmod a=+rx bin/startup.sh</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行安装文件：sudo bin/startup.sh</p>
+                                    <h4>21：idea下配置tomcat流程</h4>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置请参考：<a href="https://blog.csdn.net/qq_31914787/article/details/82529893">tomcat与idea结合</a></p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置中出现的端口越界或被占用等无法使用的问题：修改端口为8686</p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决idea运行时输出乱码：<a href="https://blog.csdn.net/weixin_42443070/article/details/88085762">解决idea运行输出乱码</a></p>
 
                                     <!--div class="two-column">
                                         <div class="row">
