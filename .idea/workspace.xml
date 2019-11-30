@@ -47,7 +47,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NEXTINtel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ticket" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -92,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575113249339</updated>
-      <workItem from="1575113250964" duration="9497000" />
+      <workItem from="1575113250964" duration="12296000" />
     </task>
     <servers />
   </component>
