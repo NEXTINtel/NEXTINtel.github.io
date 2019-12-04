@@ -1,87 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>畅行 - 让出行更便捷. | 首页</title>
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
-<!--Color Switcher Mockup-->
-<link href="css/color-switcher-design.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>畅行 - 让出行更便捷. | 查询结果</title>
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--Color Switcher Mockup-->
+    <link href="css/color-switcher-design.css" rel="stylesheet">
 
-<!--Color Themes-->
-<link id="theme-color-file" href="css/color-themes/default-theme.css" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="css/color-themes/default-theme.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="images/method-draw-image.png" type="image/x-icon">
-<link rel="icon" href="images/method-draw-image.png" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <link rel="shortcut icon" href="images/method-draw-image.png" type="image/x-icon">
+    <link rel="icon" href="images/method-draw-image.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <!--自定义添加部分-->
+    <link href="css/table.css" rel="stylesheet">
 </head>
-
 <body>
-
 <div class="page-wrapper">
-    <!-- Preloader -->
-    <!--div class="preloader"></div-->
-    
     <!-- Main Header-->
-    <header class="main-header header-style-two">
-        <!-- Header Upper -->
-        <div class="header-upper">
+    <!-- Main Header-->
+    <header class="main-header header-style-one">
+        <!--Header Top-->
+        <div class="header-top">
             <div class="auto-container">
-                <div class="clearfix">
-                    
-                    <div class="logo-outer">
-                        <div class="logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt="" title=""></a></div>
+                <div class="inner-container clearfix">
+                    <div class="top-left">
+                        <ul class="contact-list clearfix">
+                            <li><i class="fa fa-phone-volume"></i> <a href="tel:215-598-385">666-666-666</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:admin@raqba.com">ChangXing@163.com</a></li>
+                        </ul>
                     </div>
-                    
-                    <div class="upper-right clearfix">
-                        
-                        <!--Info Box-->
-                        <!--div class="upper-column info-box">
-                            <div class="icon-box"><span class="fa fa-map-marker-alt"></span></div>
-                            <ul>
-                                <li>18 Haward Amston <br>Building St, CA, USA</li>
-                            </ul>
-                        </div-->
+                    <div class="top-right clearfix">
+                        <ul class="social-icon-one">
+                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-skype"></span></a></li>
+                            <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                        </ul>
 
-                        <!--Info Box-->
-                        <!--div class="upper-column info-box">
-                            <div class="icon-box"><span class="fa fa-phone-volume"></span></div>
-                            <ul>
-                                <li><a href="tel:(+84)388-969-888">(+84) 388-969-888</a></li>
-                                <li><a href="tel:(+84)388-969-888">(+84) 388-969-888</a></li>
-                            </ul>
-
-                        </div-->
-
-                        <!--Info Box-->
-                        <!--div class="upper-column info-box">
-                            <div class="icon-box"><span class="fa fa-envelope"></span></div>
-                            <ul>
-                                <li><a href="mailto:arytheme@outlook.com">arytheme@outlook.com</a></li>
-                                <li><a href="mailto:support@arytheme.com">support@arytheme.com</a></li>
-                            </ul>
-                        </div-->
-
-                        <!--Info Box-->
-                        <div class="upper-column btn-box info-box">
-                            <a href="login.html" class="theme-btn btn-style-two"><span class="btn-title">登录/注册</span></a>
-                        </div>
+                        <ul class="login-signup">
+                            <li><a href="#">登录</a></li>
+                            <li><a href="#">注册</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Header Upper -->
+        <!-- End Header Top -->
 
         <!--Header Lower-->
         <div class="header-lower">
             <div class="auto-container">
                 <div class="main-box clearfix">
+                    <div class="pull-left logo-outer">
+                        <div class="logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a></div>
+                    </div>
+
                     <!--Nav Box-->
                     <div class="nav-outer clearfix">
                         <!--Mobile Navigation Toggler-->
@@ -92,8 +75,8 @@
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="index.html">首页</a></li>
-                                    <li><a href="result.html.html">余票查询</a></li>
-                                    <li><a href="result.html">路线查询</a></li>
+                                    <li><a href="index.html">余票查询</a></li>
+                                    <li><a href="index.html">路线查询</a></li>
                                     <li><a href="index.html">出行指南</a></li>
                                     <li class="dropdown"><a href="index.html">信息查询</a>
                                         <ul>
@@ -111,12 +94,10 @@
                         <!-- Main Menu End-->
 
                         <div class="outer-box">
-                           <ul class="social-icon-one">
-                               <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                               <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                               <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                               <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                           </ul>
+                            <!-- Btn Box -->
+                            <div class="btn-box">
+                                <a href="index.html" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,11 +116,11 @@
                 <div class="nav-outer pull-right">
                     <!--Mobile Navigation Toggler-->
                     <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
-                    
+
                     <!-- Main Menu -->
                     <nav class="main-menu navbar-expand-lg">
                         <div class="navbar-collapse collapse clearfix">
-                             <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+                            <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
                         </div>
                     </nav><!-- Main Menu End-->
                 </div>
@@ -150,86 +131,29 @@
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
-            
+
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a></div>
-                
+                <div class="nav-logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/logo.png" alt="" title=""></a></div>
+
                 <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             </nav>
         </div><!-- End Mobile Menu -->
     </header>
     <!--End Main Header -->
 
-    <!-- Banner Section -->
-    <section class="banner-section-two">
-        <div class="banner-carousel-two owl-carousel owl-theme">
-            <!-- Slide Item -->
-            <div class="slide-item" style="background-image: url(images/main-slider/2.jpg);">
-                <div class="auto-container">
-
-                    <div class="content-box clearfix">
-                        <div class="left-content">
-                            <div class="status"><span>畅行</span></div>
-                            <h2>心向世界，始于足下</h2>
-                            <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
-                        </div>
-
-                        <div class="right-content">
-                            <span class="tag">多、快、好、省</span>
-                            <span class="price">8位用户的选择</span>
-                            <span class="avail">即刻购票，畅享更多优惠</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                        <!-- Slide Item -->
-            <div class="slide-item" style="background-image: url(images/main-slider/3.jpg);">
-                <div class="auto-container">
-
-                    <div class="content-box clearfix">
-                        <div class="left-content">
-                            <div class="status"><span>畅行</span></div>
-                            <h2>心向世界，始于足下</h2>
-                            <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
-                        </div>
-
-                        <div class="right-content">
-                            <span class="tag">多、快、好、省</span>
-                            <span class="price">8位用户的选择</span>
-                            <span class="avail">即刻购票，畅享更多优惠</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                        <!-- Slide Item -->
-            <div class="slide-item" style="background-image: url(images/main-slider/1.jpg);">
-                <div class="auto-container">
-
-                    <div class="content-box clearfix">
-                        <div class="left-content">
-                            <div class="status"><span>畅行</span></div>
-                            <h2>心向世界，始于足下</h2>
-                            <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
-                        </div>
-
-                        <div class="right-content">
-                            <span class="tag">多、快、好、省</span>
-                            <span class="price">8位用户的选择</span>
-                            <span class="avail">即刻购票，畅享更多优惠</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(images/main-slider/4.jpg)">
+        <div class="auto-container">
+            <h1>订票查询</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li>订票详细信息查询</li>
+            </ul>
         </div>
     </section>
-    <!--End Banner Section -->
-    
+    <!--End Page Title-->
+
     <!-- Property Search Section -->
     <section class="property-search-section style-two">
         <div class="auto-container">
@@ -352,82 +276,73 @@
 
                             <!-- Form Group -->
                             <div class="form-group col-lg-12 col-md-6 col-sm-12 text-center">
-                                <button type="submit" class="theme-btn btn-style-one"><span class="btn-title">一键查询</span></button>
+                                <button type="submit" class="theme-btn btn-style-one"><span class="btn-title" href="index.html">一键查询</span></button>
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
     </section>
     <!-- End Property Search Section -->
 
+    <!--查询表结果反馈-->
+    <!--样式修改对应css/table.css文件-->
+    <table id="gradient-style" summary="Meeting Results">
+        <thead>
+        <tr>
+            <!--此处是行标题，不用修改，保持固定即可-->
+            <th scope="col">车次</th>
+            <th scope="col">出发站</th>
+            <th scope="col">出发时间</th>
+            <th scope="col">到达站</th>
+            <th scope="col">到达时间</th>
+            <th scope="col">历时</th>
+            <th scope="col">商务座<br/>特等座</th>
+            <th scope="col">一等座</th>
+            <th scope="col">二等座</th>
+            <th scope="col">软卧<br/>一等卧</th>
+            <th scope="col">动卧</th>
+            <th scope="col">硬卧<br/>二等卧</th>
+            <th scope="col">软座</th>
+            <th scope="col">硬座</th>
+            <th scope="col">无座</th>
+            <th scope="col"><strong>备注</strong></th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <!--此处输出查出的记录总数-->
+            <td colspan="4"><strong><font color="#d2691e">共查到xxx条符合您出行的相关信息，请及时购票避免行程延误!</font></strong></td>
+        </tr>
+        </tfoot>
+        <!--此处按行输出php查询的结果-->
+        <tr>
+            <td>G101</td>
+            <td>北京南</td>
+            <td>06:36</td>
+            <td>上海虹桥</td>
+            <td>12:40</td>
+            <td>06:04</td>
+            <td>候补</td>
+            <td>有</td>
+            <td>有</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="order.html">预定购票</a></td></td>
+        </tr>
+        <!--在此处添加更多行-->
 
-    <!-- Main Footer -->
-    <footer class="main-footer" style="background-image: url(images/background/3.jpg);">
-        <div class="auto-container">
-            <div class="upper-box">
-                <div class="row">
-                    <!-- Upper column -->
-                    <div class="upper-column col-lg-3 col-md-12 col-sm-12">
-                        <div class="footer-logo">
-                            <figure class="image"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt=""></a></figure>
-                        </div>
-                    </div>
-
-                    <!-- Upper column -->
-                    <div class="upper-column col-lg-3 col-md-12 col-sm-12">
-                        <h2>畅行 <br>让出行更便捷,<br>心向世界，始于足下.</h2>
-                    </div>
-
-                    <!-- Upper column -->
-                    <div class="upper-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="subscribe-form">
-                            <form method="post" action="index.html">
-                                <div class="form-group">
-                                    <input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
-                                    <button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </footer>
-    <!-- End Main Footer -->
+        </tbody>
+    </table>
 
 </div>
 <!-- End Page Wrapper -->
-
-<!-- Color Palate / Color Switcher -->
-<!--div class="color-palate">
-    <div class="color-trigger">
-        <i class="fa fa-cog"></i>
-    </div>
-    <div class="color-palate-head">
-        <h6>Choose Your Color</h6>
-    </div>
-    <div class="various-color clearfix">
-        <div class="colors-list">
-            <span class="palate default-color active" data-theme-file="css/color-themes/default-theme.css"></span>
-            <span class="palate green-color" data-theme-file="css/color-themes/green-theme.css"></span>
-            <span class="palate blue-color" data-theme-file="css/color-themes/blue-theme.css"></span>
-            <span class="palate orange-color" data-theme-file="css/color-themes/orange-theme.css"></span>
-            <span class="palate purple-color" data-theme-file="css/color-themes/purple-theme.css"></span>
-            <span class="palate teal-color" data-theme-file="css/color-themes/teal-theme.css"></span>
-            <span class="palate brown-color" data-theme-file="css/color-themes/brown-theme.css"></span>
-            <span class="palate redd-color" data-theme-file="css/color-themes/redd-color.css"></span>
-        </div>
-    </div>
-    
-    <div class="palate-foo">
-        <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
-    </div>
-</div--><!-- End Color Switcher -->
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
@@ -444,5 +359,6 @@
 <script src="js/script.js"></script>
 <!-- Color Setting -->
 <script src="js/color-settings.js"></script>
+
 </body>
 </html>

@@ -50,11 +50,23 @@
     </expand>
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
   <component name="ProjectId" id="1UKlcnqj7MJNEZ1Nu0cn7Z1hL9P" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NEXTINtel" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -95,7 +107,13 @@
       <option name="presentableId" value="Default" />
       <updated>1575113249339</updated>
       <workItem from="1575113250964" duration="12862000" />
-      <workItem from="1575189442615" duration="15306000" />
+      <workItem from="1575189442615" duration="16566000" />
+      <workItem from="1575276679284" duration="5629000" />
+      <workItem from="1575341173047" duration="1426000" />
+      <workItem from="1575363298471" duration="4722000" />
+      <workItem from="1575375629572" duration="530000" />
+      <workItem from="1575376420587" duration="4000000" />
+      <workItem from="1575418264105" duration="2438000" />
     </task>
     <servers />
   </component>
