@@ -1,3 +1,5 @@
+<!--车票信息查询结果界面-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +25,10 @@
 
     <!--自定义添加部分-->
     <link href="css/table.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/list.css" />
 </head>
 <body>
 <div class="page-wrapper">
-    <!-- Main Header-->
     <!-- Main Header-->
     <header class="main-header header-style-one">
         <!--Header Top-->
@@ -75,19 +77,19 @@
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="index.html">首页</a></li>
-                                    <li><a href="index.html">余票查询</a></li>
-                                    <li><a href="index.html">路线查询</a></li>
-                                    <li><a href="index.html">出行指南</a></li>
-                                    <li class="dropdown"><a href="index.html">信息查询</a>
+                                    <li><a href="result.html">余票查询</a></li>
+                                    <li><a href="result.html">路线查询</a></li>
+                                    <li><a href="#">出行指南</a></li>
+                                    <li class="dropdown"><a href="index.html">个人中心</a>
                                         <ul>
-                                            <li><a href="index.html">敬请期待</a></li>
-                                            <li><a href="index.html">敬请期待</a></li>
-                                            <li><a href="index.html">敬请期待</a></li>
+                                            <li><a href="order/admin/index/admin-info.html">我的资料</a></li>
+                                            <li><a href="order/admin/index/rbac-admin.html">火车票订单</a></li>
+                                            <li><a href="order/admin/index/article-list.html">常用联系人</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="index.html">我的</a></li>
-                                    <li><a href="index.html">信息反馈</a></li>
-                                    <li><a href="index.html">关于我们</a></li>
+                                    <li><a href="#">信息查询</a></li>
+                                    <li><a href="#">信息反馈</a></li>
+                                    <li><a href="#">关于我们</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -319,7 +321,68 @@
         </tfoot>
         <!--此处按行输出php查询的结果-->
         <tr>
-            <td>G101</td>
+            <td>
+                <div class="list-station">
+                    <table class="list-station-table table ">
+                        <thead class="list-station-table-thead">
+                        <tr>
+                            <td>站序</td>
+                            <td>站名</td>
+                            <td>到站时间</td>
+                            <td>出发时间</td>
+                            <td>停留时间</td>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>上海</td>
+                            <td>--</td>
+                            <td>06:39</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>苏州北</td>
+                            <td>08:20</td>
+                            <td>08:22</td>
+                            <td>2分钟</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>无锡东</td>
+                            <td>09:46</td>
+                            <td>09:48</td>
+                            <td>2分钟</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>南京南</td>
+                            <td>10:20</td>
+                            <td>10:22</td>
+                            <td>2分钟</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>北京南</td>
+                            <td>12:18</td>
+                            <td>--</td>
+                            <td>--</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="list-station-bottom-table">
+                        <tr>
+                            <td>G101</td>
+                            <td>上海--->北京南</td>
+                            <td>高速</td>
+                            <td>有空调</td>
+                        </tr>
+                    </table>
+                </div>
+                <a class="btn list-tr-a">G101</a><span class="caret"></span>
+            </td>
             <td>北京南</td>
             <td>06:36</td>
             <td>上海虹桥</td>
@@ -334,12 +397,49 @@
             <td>-</td>
             <td>-</td>
             <td>-</td>
-            <td><a href="order.html">预定购票</a></td></td>
+            <td><a href="order/admin/index/menu-add2.html">预定购票</a></td></td>
         </tr>
         <!--在此处添加更多行-->
 
         </tbody>
     </table>
+
+
+    <!-- Main Footer -->
+    <footer class="main-footer" style="background-image: url(images/background/3.jpg);">
+        <div class="auto-container">
+            <div class="upper-box">
+                <div class="row">
+                    <!-- Upper column -->
+                    <div class="upper-column col-lg-3 col-md-12 col-sm-12">
+                        <div class="footer-logo">
+                            <figure class="image"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt=""></a></figure>
+                        </div>
+                    </div>
+
+                    <!-- Upper column -->
+                    <div class="upper-column col-lg-3 col-md-12 col-sm-12">
+                        <h2>畅行 <br>让出行更便捷,<br>心向世界，始于足下.</h2>
+                    </div>
+
+                    <!-- Upper column -->
+                    <div class="upper-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="subscribe-form">
+                            <form method="post" action="index.html">
+                                <div class="form-group">
+                                    <input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
+                                    <button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!-- End Main Footer -->
 
 </div>
 <!-- End Page Wrapper -->

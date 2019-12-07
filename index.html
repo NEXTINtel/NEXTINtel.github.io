@@ -1,3 +1,5 @@
+<!--首页部分-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +22,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <!--自定义样式-->
+    <style type="text/css">
+        /*input css*/
+        .iInput{
+            position: absolute;
+            width: 99px;
+            height: 16px;
+            left: 1px;
+            top: 2px;
+            border-bottom: 0px;
+            border-right: 0px;
+            border-left: 0px;
+            border-top: 0px;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,19 +110,19 @@
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="index.html">首页</a></li>
-                                    <li><a href="result.html.html">余票查询</a></li>
+                                    <li><a href="result.html">余票查询</a></li>
                                     <li><a href="result.html">路线查询</a></li>
-                                    <li><a href="index.html">出行指南</a></li>
-                                    <li class="dropdown"><a href="index.html">信息查询</a>
+                                    <li><a href="#">出行指南</a></li>
+                                    <li class="dropdown"><a href="index.html">个人中心</a>
                                         <ul>
-                                            <li><a href="index.html">敬请期待</a></li>
-                                            <li><a href="index.html">敬请期待</a></li>
-                                            <li><a href="index.html">敬请期待</a></li>
+                                            <li><a href="order/admin/index/admin-info.html">我的资料</a></li>
+                                            <li><a href="order/admin/index/rbac-admin.html">火车票订单</a></li>
+                                            <li><a href="order/admin/index/article-list.html">常用联系人</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="index.html">我的</a></li>
-                                    <li><a href="index.html">信息反馈</a></li>
-                                    <li><a href="index.html">关于我们</a></li>
+                                    <li><a href="#">信息查询</a></li>
+                                    <li><a href="#">信息反馈</a></li>
+                                    <li><a href="#">关于我们</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -239,9 +257,10 @@
                     <form method="post" action="php/search.php">
                         <div class="row">
                             <!-- Form Group -->
-                            <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                            <div class="form-group col-lg-3 col-md-6 col-sm-12" style="position:relative;">
                                 <label>出发城市</label>
-                                <select class="custom-select-box">
+                                <input id="input" name="input" class="iInput"/>
+                                <select class="custom-select-box" style="width:120px;" onchange="document.getElementById('input').value=this.value">
                                     <option>太原</option>
                                     <option>北京</option>
                                     <option>上海</option>
