@@ -1,4 +1,7 @@
 <!--常用联系人列表-->
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html class="iframe-h">
@@ -58,10 +61,26 @@
 								<li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
 							</ul>
 
-							<ul class="login-signup">
-								<li><a href="#">登录</a></li>
-								<li><a href="#">注册</a></li>
-							</ul>
+                            <?php
+                            if($_SESSION['UserName']==NULL){
+                                //用echo输出html标签不会报错
+                                //此刻用户还未登录或者注册
+                                echo '<ul class="login-signup">
+								      <li><a href="../../../login.html">登录</a></li>
+								      <li><a href="../../../login.html">注册</a></li>
+							          </ul>';
+                            }
+                            else{
+                                //已注册
+                                $welcome1='欢迎您';
+                                $welcome2=$_SESSION['UserName'];
+                                $welcome=$welcome1." ".$welcome2;
+                                echo "<ul class=\"login-signup\">
+                                      <li><a href='#'>$welcome</a></li>
+								      <li><a href=\"../../../php/logoff.php\">退出登录</a></li>
+							          </ul>";
+                            }
+                            ?>
 						</div>
 					</div>
 				</div>
@@ -73,7 +92,7 @@
 				<div class="auto-container">
 					<div class="main-box clearfix">
 						<div class="pull-left logo-outer">
-							<div class="logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
+							<div class="logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
 						</div>
 
 						<!--Nav Box-->
@@ -85,15 +104,15 @@
 							<nav class="main-menu navbar-expand-lg navbar-light">
 								<div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
 									<ul class="navigation clearfix">
-										<li><a href="../../../index.html">首页</a></li>
-										<li><a href="../../../result.html">余票查询</a></li>
-										<li><a href="../../../result.html">路线查询</a></li>
+										<li><a href="../../../index.php">首页</a></li>
+										<li><a href="../../../result.php">余票查询</a></li>
+										<li><a href="../../../result.php">路线查询</a></li>
 										<li><a href="#">出行指南</a></li>
 										<li class="dropdown"><a href="index.html">个人中心</a>
 											<ul>
-												<li><a href="admin-info.html">我的资料</a></li>
-												<li><a href="rbac-admin.html">火车票订单</a></li>
-												<li><a href="article-list.html">常用联系人</a></li>
+												<li><a href="admin-info.php">我的资料</a></li>
+												<li><a href="rbac-admin.php">火车票订单</a></li>
+												<li><a href="article-list.php">常用联系人</a></li>
 											</ul>
 										</li>
 										<li><a href="#">信息查询</a></li>
@@ -107,7 +126,7 @@
 							<div class="outer-box">
 								<!-- Btn Box -->
 								<div class="btn-box">
-									<a href="article-list.html" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
+									<a href="article-list.php" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
 								</div>
 							</div>
 						</div>
@@ -121,7 +140,7 @@
 				<div class="auto-container clearfix">
 					<!--Logo-->
 					<div class="logo pull-left">
-						<a href="../../../index.html" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
+						<a href="../../../index.php" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
 					</div>
 					<!--Right Col-->
 					<div class="nav-outer pull-right">
@@ -145,7 +164,7 @@
 
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
-					<div class="nav-logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
+					<div class="nav-logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
 
 					<ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
 				</nav>
@@ -158,7 +177,7 @@
 			<div class="auto-container">
 				<h1>个人中心</h1>
 				<ul class="page-breadcrumb">
-					<li><a href="../../../index.html">首页</a></li>
+					<li><a href="../../../index.php">首页</a></li>
 					<li>个人中心</li>
 					<li>常用联系人</li>
 				</ul>
@@ -174,9 +193,9 @@
 					<form class="layui-form" action="">
 						<div class="layui-form-item">
 							<div class="layui-inline tool-btn">
-								<button class="layui-btn layui-btn-small layui-btn-normal addBtn" data-url="article-add.html"><i class="layui-icon">&#xe654;</i></button>
-								<button class="layui-btn layui-btn-small layui-btn-danger delBtn"  data-url="article-add.html"><i class="layui-icon">&#xe640;</i></button>
-								<button class="layui-btn layui-btn-small layui-btn-warm listOrderBtn hidden-xs" data-url="article-add.html"><i class="iconfont">&#xe656;</i></button>
+								<button class="layui-btn layui-btn-small layui-btn-normal addBtn" data-url="article-add.php"><i class="layui-icon">&#xe654;</i></button>
+								<button class="layui-btn layui-btn-small layui-btn-danger delBtn"  data-url="article-add.php"><i class="layui-icon">&#xe640;</i></button>
+								<button class="layui-btn layui-btn-small layui-btn-warm listOrderBtn hidden-xs" data-url="article-add.php"><i class="iconfont">&#xe656;</i></button>
 							</div>
 							<div class="layui-inline">
 								<input type="text" name="title" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
@@ -211,42 +230,105 @@
 									<th class="hidden-xs">姓名</th>
 									<th>身份证号</th>
 									<th class="hidden-xs">性别</th>
-									<th class="hidden-xs">出生日期</th>
+									<th class="hidden-xs">联系方式</th>
 									<th>状态</th>
 									<th>操作</th>
 								</tr>
 							</thead>
+                            <tfoot>
+                            <!--tr>
+
+                                <td colspan=\"4\"><strong><font color=\"#d2691e\">共查到xxx条符合您出行的相关信息，请及时购票避免行程延误!</font></strong></td>
+                            </tr-->
+                            </tfoot>
 							<tbody>
-								<tr>
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-									<td class="hidden-xs">1</td>
-									<td class="hidden-xs"><!--input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"-->张三</td>
-									<td>111111666688881234</td>
-									<td class="hidden-xs">男</td>
-									<td class="hidden-xs">1989-10-14</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
+                            <?php
+                            //获取当前登录的账户名称及密码,用于查询数据库
+                            $username=$_SESSION['UserName'];
+                            $password=$_SESSION['UserPassword'];
+                            $Uid=$_SESSION['Uid'];
+
+                            //连接数据库
+                            $con=mysqli_connect("localhost","root","19990420",ticket);
+                            if(!$con){
+                                echo "数据库连接失败！请检查网络重新连接或联系管理员";
+                            }
+
+                            //多表联合查询
+                            //$re_temp=mysqli_query($con,"SELECT tourist_name,tourist_id,Tourist_sex,Tourist_phone FROM `_TU`,'_Tourist' WHERE _TU.user_name='$username' AND _TU.user_password='$password'");
+
+                            $sql = "SELECT _tu.tourist_name,_tu.tourist_id,_tourist.Tourist_sex,_tourist.Tourist_phone FROM _tu INNER JOIN _tourist ON _tu.tourist_id=_tourist.Tourist_ID WHERE _tu.user_name='$username' AND _tu.user_password='$password'";
+                            $result = mysqli_query($con, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                // 输出数据
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    //echo "id: " . $row["tourist_name"]. " - Name: " . $row["tourist_id"]. " " . $row["Tourist_sex"]. "<br>";
+                                    $_re1=$row["tourist_name"];
+                                    $_re2=$row["tourist_id"];
+                                    $_re3=$row["Tourist_sex"];
+                                    $_re4=$row["Tourist_phone"];
+                                    echo "<tr>
+									<td><input type=\"checkbox\" name=\"\" lay-skin=\"primary\" data-id=\"1\"></td>
+									<td class=\"hidden-xs\">2</td>
+									<td class=\"hidden-xs\"><!--input type=\"text\" name=\"title\" autocomplete=\"off\" class=\"layui-input\" value=\"0\" data-id=\"1\"-->$_re1</td>
+									<td>$_re2</td>
+									<td class=\"hidden-xs\">$_re3</td>
+									<td class=\"hidden-xs\">$_re4</td>
+									<td><button class=\"layui-btn layui-btn-mini layui-btn-normal\">正常</button></td>
 									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-small layui-btn-normal go-btn" data-id="1" data-url="article-detail.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1" data-url="article-detail.html"><i class="layui-icon">&#xe640;</i></button>
+										<div class=\"layui-inline\">
+											<button class=\"layui-btn layui-btn-small layui-btn-normal go-btn\" data-id=\"1\" data-url=\"article-detail.php\"><i class=\"layui-icon\">&#xe642;</i></button>
+											<button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" data-id=\"1\" data-url=\"article-detail.php\"><i class=\"layui-icon\">&#xe640;</i></button>
 										</div>
 									</td>
-								</tr>
-								<tr>
+								</tr>";
+                                }
+                            } else {
+                                echo "0 结果";
+                            }
+
+                            //echo mysqli_num_rows($result);结果为2行
+
+                            if(mysqli_num_rows($result)>0){
+                                //输出数据
+                                while($row=mysqli_fetch_assoc($result)){
+                                    $row[]=$row;    //接受结果集
+                                    /*echo "<tr>
+									<td><input type=\"checkbox\" name=\"\" lay-skin=\"primary\" data-id=\"1\"></td>
+									<td class=\"hidden-xs\">2</td>
+									<td class=\"hidden-xs\"><!--input type=\"text\" name=\"title\" autocomplete=\"off\" class=\"layui-input\" value=\"0\" data-id=\"1\"--></td>
+									<td>111111222233336666</td>
+									<td class=\"hidden-xs\">女</td>
+									<td class=\"hidden-xs\">1989-10-14</td>
+									<td><button class=\"layui-btn layui-btn-mini layui-btn-normal\">正常</button></td>
+									<td>
+										<div class=\"layui-inline\">
+											<button class=\"layui-btn layui-btn-small layui-btn-normal go-btn\" data-id=\"1\" data-url=\"article-detail.php\"><i class=\"layui-icon\">&#xe642;</i></button>
+											<button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" data-id=\"1\" data-url=\"article-detail.php\"><i class=\"layui-icon\">&#xe640;</i></button>
+										</div>
+									</td>
+								</tr>";*/
+                                }
+                                echo $row;
+                            }
+                            ?>
+
+								<!--tr>
 									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
 									<td class="hidden-xs">2</td>
-									<td class="hidden-xs"><!--input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"-->李四</td>
+									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1">李四</td>
 									<td>111111222233336666</td>
 									<td class="hidden-xs">女</td>
 									<td class="hidden-xs">1989-10-14</td>
 									<td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
 									<td>
 										<div class="layui-inline">
-											<button class="layui-btn layui-btn-small layui-btn-normal go-btn" data-id="1" data-url="article-detail.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1" data-url="article-detail.html"><i class="layui-icon">&#xe640;</i></button>
+											<button class="layui-btn layui-btn-small layui-btn-normal go-btn" data-id="1" data-url="article-detail.php"><i class="layui-icon">&#xe642;</i></button>
+											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1" data-url="article-detail.php"><i class="layui-icon">&#xe640;</i></button>
 										</div>
 									</td>
-								</tr>
+								</tr-->
 							</tbody>
 						</table>
 						<div class="page-wrap">
@@ -273,7 +355,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-3 col-md-12 col-sm-12">
 						<div class="footer-logo">
-							<figure class="image"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
+							<figure class="image"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
 						</div>
 					</div>
 
@@ -285,7 +367,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-6 col-md-12 col-sm-12">
 						<div class="subscribe-form">
-							<form method="post" action="../../../index.html">
+							<form method="post" action="../../../index.php">
 								<div class="form-group">
 									<input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
 									<button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>

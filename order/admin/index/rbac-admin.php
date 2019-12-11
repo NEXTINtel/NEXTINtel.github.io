@@ -1,4 +1,7 @@
 <!--火车票订单列表-->
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -58,10 +61,26 @@
 								<li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
 							</ul>
 
-							<ul class="login-signup">
-								<li><a href="#">登录</a></li>
-								<li><a href="#">注册</a></li>
-							</ul>
+                            <?php
+                            if($_SESSION['UserName']==NULL){
+                                //用echo输出html标签不会报错
+                                //此刻用户还未登录或者注册
+                                echo '<ul class="login-signup">
+								      <li><a href="../../../login.html">登录</a></li>
+								      <li><a href="../../../login.html">注册</a></li>
+							          </ul>';
+                            }
+                            else{
+                                //已注册
+                                $welcome1='欢迎您';
+                                $welcome2=$_SESSION['UserName'];
+                                $welcome=$welcome1." ".$welcome2;
+                                echo "<ul class=\"login-signup\">
+                                      <li><a href='#'>$welcome</a></li>
+								      <li><a href=\"../../../php/logoff.php\">退出登录</a></li>
+							          </ul>";
+                            }
+                            ?>
 						</div>
 					</div>
 				</div>
@@ -73,7 +92,7 @@
 				<div class="auto-container">
 					<div class="main-box clearfix">
 						<div class="pull-left logo-outer">
-							<div class="logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
+							<div class="logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
 						</div>
 
 						<!--Nav Box-->
@@ -85,15 +104,15 @@
 							<nav class="main-menu navbar-expand-lg navbar-light">
 								<div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
 									<ul class="navigation clearfix">
-										<li><a href="../../../index.html">首页</a></li>
-										<li><a href="../../../result.html">余票查询</a></li>
-										<li><a href="../../../result.html">路线查询</a></li>
+										<li><a href="../../../index.php">首页</a></li>
+										<li><a href="../../../result.php">余票查询</a></li>
+										<li><a href="../../../result.php">路线查询</a></li>
 										<li><a href="#">出行指南</a></li>
-										<li class="dropdown"><a href="index.html">个人中心</a>
+										<li class="dropdown"><a href="#">个人中心</a>
 											<ul>
-												<li><a href="admin-info.html">我的资料</a></li>
-												<li><a href="rbac-admin.html">火车票订单</a></li>
-												<li><a href="article-list.html">常用联系人</a></li>
+												<li><a href="admin-info.php">我的资料</a></li>
+												<li><a href="rbac-admin.php">火车票订单</a></li>
+												<li><a href="article-list.php">常用联系人</a></li>
 											</ul>
 										</li>
 										<li><a href="#">信息查询</a></li>
@@ -107,7 +126,7 @@
 							<div class="outer-box">
 								<!-- Btn Box -->
 								<div class="btn-box">
-									<a href="rbac-admin.html" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
+									<a href="rbac-admin.php" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
 								</div>
 							</div>
 						</div>
@@ -121,7 +140,7 @@
 				<div class="auto-container clearfix">
 					<!--Logo-->
 					<div class="logo pull-left">
-						<a href="../../../index.html" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
+						<a href="../../../index.php" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
 					</div>
 					<!--Right Col-->
 					<div class="nav-outer pull-right">
@@ -145,7 +164,7 @@
 
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
-					<div class="nav-logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
+					<div class="nav-logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
 
 					<ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
 				</nav>
@@ -158,7 +177,7 @@
 			<div class="auto-container">
 				<h1>个人中心</h1>
 				<ul class="page-breadcrumb">
-					<li><a href="../../../index.html">首页</a></li>
+					<li><a href="../../../index.php">首页</a></li>
 					<li>个人中心</li>
 					<li>火车票订单</li>
 				</ul>
@@ -171,10 +190,10 @@
 
 		<div class="wrap-container">
 				<div class="column-content-detail">
-					<form class="layui-form" action="">
+					<form class="layui-form" action="../../../result.php">
 						<div class="layui-form-item">
 							<div class="layui-inline tool-btn">
-								 <button class="layui-btn layui-btn-small layui-btn-normal addBtn"><i class="layui-icon">&#xe654;</i></button>
+								 <button class="layui-btn layui-btn-small layui-btn-normal addBtn" type="submit" data-url="../../../result.php"><i class="layui-icon">&#xe654;</i></button>
 								<button class="layui-btn layui-btn-small layui-btn-warm listOrderBtn hidden-xs"><i class="iconfont">&#xe656;</i></button>
 							</div>
 							<div class="layui-inline">
@@ -183,8 +202,8 @@
 							<div class="layui-inline">
 								<select name="states" lay-filter="status">
 									<option value="">请选择一位旅客</option>
-									<option value="010">张三</option>
-									<option value="021">李四</option>
+									<!--option value="010">张三</option>
+									<option value="021">李四</option-->
 								</select>
 							</div>
 							<button class="layui-btn layui-btn-normal" lay-submit="search">搜索</button>
@@ -206,61 +225,104 @@
 								<tr>
 									<th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
 									<th class="hidden-xs">车次</th>
-									<th>乘客姓名</th>
-									<th class="hidden-xs">订单号</th>
+									<th>订单号</th>
+									<th class="hidden-xs">乘客信息</th>
 									<th class="hidden-xs">出发时间</th>
-									<th class="hidden-xs">始发站/终点站</th>
+									<th class="hidden-xs">始发站-->终点站</th>
 									<th class="hidden-xs">状态</th>
 									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
-									<td class="hidden-xs">G1</td>
-									<td>张三</td>
-									<td class="hidden-xs">T1234567890</td>
-									<td class="hidden-xs">1989-10-14</td>
-									<td class="hidden-xs">北京->太原</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-warm">拉黑</button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1" data-url=""><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1" data-url=""><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
-									<td class="hidden-xs">G2</td>
-									<td>李四</td>
-									<td class="hidden-xs">T0987654321</td>
-									<td class="hidden-xs">1989-10-14</td>
-									<td class="hidden-xs">北京->长沙</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
-									<td class="hidden-xs">G3</td>
-									<td>王五</td>
-									<td class="hidden-xs">T5647382910</td>
-									<td class="hidden-xs">1989-10-14</td>
-									<td class="hidden-xs">北京->成都</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
+								<?php
+                                //获取当前登录的账户名称及密码,用于查询数据库
+                                $username=$_SESSION['UserName'];
+                                $password=$_SESSION['UserPassword'];
+                                $Uid=$_SESSION['Uid'];
+
+                                //连接数据库
+                                $con=mysqli_connect("localhost","root","19990420",ticket);
+                                if(!$con){
+                                    echo "数据库连接失败！请检查网络重新连接或联系管理员";
+                                }
+
+                                //多表联合查询
+                                //$re_temp=mysqli_query($con,"SELECT tourist_name,tourist_id,Tourist_sex,Tourist_phone FROM `_TU`,'_Tourist' WHERE _TU.user_name='$username' AND _TU.user_password='$password'");
+
+                                $sql = "SELECT * FROM _tickets_info natural JOIN _tpu WHERE UserName='$username' AND UserPassword='$password'" ;
+                                $result = mysqli_query($con, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    // 输出数据
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        //echo "id: " . $row["tourist_name"]. " - Name: " . $row["tourist_id"]. " " . $row["Tourist_sex"]. "<br>";
+                                        $_re1_=$row["OrderID"];
+                                        $_re2_=$row["TrainID"];
+                                        $_re3_=$row["StartStation"];
+                                        $_re4_=$row["StartTime"];
+                                        $_re5_=$row["ArriveStation"];
+                                        $_re6_=$row["ArriveTime"];
+                                        $_re7_=$row["Passenger"];
+                                        $_re8_=$row["SeatType"];
+                                        $_re9_=$row["CompartmentID"];
+                                        $_re10_=$row["SeatID"];
+                                        $_re11_=$row["SeatAllID"];
+                                        $_re12_=$row["Price"];
+                                        $_re13_=$row["CreateTime"];
+
+                                        $_re14_=$_re3_."-->".$_re5_;
+                                        echo "<tr>
+                                <td><input type=\"checkbox\" name=\"\" lay-skin=\"primary\"  data-id=\"1\"></td>
+                                <td class=\"hidden-xs\">$_re2_</td>
+                                <td>$_re1_</td>
+                                <td class=\"hidden-xs\">$_re7_</td>
+                                <td class=\"hidden-xs\">$_re4_</td>
+                                <td class=\"hidden-xs\">$_re14_</td>
+                                <td><button class=\"layui-btn layui-btn-mini layui-btn-warm\">正常</button></td>
+                                <td>
+                                    <div class=\"layui-inline\">
+                                        <button class=\"layui-btn layui-btn-small layui-btn-normal  edit-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe642;</i></button>
+                                        <button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe640;</i></button>
+                                    </div>
+                                </td>
+                            </tr>";
+                                    }
+                                } else {
+                                    echo "0 结果";
+                                }
+                                ?>
 							</tbody>
+
+                            <!--tr>
+                                <td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
+                                <td class="hidden-xs">G2</td>
+                                <td>李四</td>
+                                <td class="hidden-xs">T0987654321</td>
+                                <td class="hidden-xs">1989-10-14</td>
+                                <td class="hidden-xs">北京->长沙</td>
+                                <td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
+                                <td>
+                                    <div class="layui-inline">
+                                        <button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
+                                        <button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
+                                <td class="hidden-xs">G3</td>
+                                <td>王五</td>
+                                <td class="hidden-xs">T5647382910</td>
+                                <td class="hidden-xs">1989-10-14</td>
+                                <td class="hidden-xs">北京->成都</td>
+                                <td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
+                                <td>
+                                    <div class="layui-inline">
+                                        <button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
+                                        <button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
+                                    </div>
+                                </td>
+                            </tr-->
 						</table>
 						<!--tp分页-->
 						<div class="page-wrap">
@@ -287,7 +349,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-3 col-md-12 col-sm-12">
 						<div class="footer-logo">
-							<figure class="image"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
+							<figure class="image"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
 						</div>
 					</div>
 
@@ -299,7 +361,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-6 col-md-12 col-sm-12">
 						<div class="subscribe-form">
-							<form method="post" action="../../../index.html">
+							<form method="post" action="../../../index.php">
 								<div class="form-group">
 									<input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
 									<button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>

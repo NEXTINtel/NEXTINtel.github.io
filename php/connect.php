@@ -1,4 +1,10 @@
 <?php
+/**
+ * 用于连接ticket数据库
+ * Create by ChangXing group
+ *2019-11-23
+ */
+
 header('Content-type:text/html;charset=utf-8');
 
 //与mysql数据库建立连接,$link相当于获取数据库令牌

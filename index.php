@@ -1,4 +1,7 @@
 <!--首页部分-->
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +57,7 @@
                 <div class="clearfix">
                     
                     <div class="logo-outer">
-                        <div class="logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt="" title=""></a></div>
+                        <div class="logo"><a href="index.php"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt="" title=""></a></div>
                     </div>
                     
                     <div class="upper-right clearfix">
@@ -88,7 +91,38 @@
 
                         <!--Info Box-->
                         <div class="upper-column btn-box info-box">
-                            <a href="login.html" class="theme-btn btn-style-two"><span class="btn-title">登录/注册</span></a>
+                            <?php
+                                if($_SESSION['UserName']==NULL){
+                                    //用echo输出html标签不会报错
+                                    //此刻用户还未登录或者注册
+                                    echo '<a href="#" class="theme-btn btn-style-two"><span class="btn-title">为了您的出行安全</span></a>';
+                                }
+                                else{
+                                    //已注册
+                                    $welcome1='欢迎您';
+                                    $welcome2=$_SESSION['UserName'];
+                                    $welcome=$welcome1." ".$welcome2;
+                                    echo "<a href=\"order/admin/index/admin-info.php\" class=\"theme-btn btn-style-two\"><span class=\"btn-title\">$welcome</span></a>";
+                                }
+                            ?>
+
+                        </div>
+
+                        <!--Info Box-->
+                        <div class="upper-column btn-box info-box">
+                            <?php
+                            if($_SESSION['UserName']==NULL){
+                                //用echo输出html标签不会报错
+                                //此刻用户还未登录或者注册
+                                echo '<a href="login.html" class="theme-btn btn-style-two"><span class="btn-title">请登录/注册</span></a>';
+                            }
+                            else{
+                                //已注册，但想退出登录
+                                $logoff='退出登录';
+                                echo "<a href=\"php/logoff.php\" class=\"theme-btn btn-style-two\"><span class=\"btn-title\">$logoff</span></a>";
+                            }
+                            ?>
+
                         </div>
                     </div>
                 </div>
@@ -109,17 +143,26 @@
                         <nav class="main-menu navbar-expand-lg navbar-light">
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li><a href="index.html">首页</a></li>
-                                    <li><a href="result.html">余票查询</a></li>
-                                    <li><a href="result.html">路线查询</a></li>
+                                    <li><a href="index.php">首页</a></li>
+                                    <li><a href="result.php">余票查询</a></li>
+                                    <li><a href="result.php">路线查询</a></li>
                                     <li><a href="#">出行指南</a></li>
-                                    <li class="dropdown"><a href="index.html">个人中心</a>
+                                    <?php
+                                        if($_SESSION['UserName']==NULL){
+                                            echo "<li class=\"dropdown\"><a href=\"login.html\">个人中心,请先登录</a>
+                                        
+                                                  </li>";
+                                        }
+                                        else{
+                                            echo "<li class=\"dropdown\"><a href=\"index.php\">个人中心</a>
                                         <ul>
-                                            <li><a href="order/admin/index/admin-info.html">我的资料</a></li>
-                                            <li><a href="order/admin/index/rbac-admin.html">火车票订单</a></li>
-                                            <li><a href="order/admin/index/article-list.html">常用联系人</a></li>
+                                            <li><a href=\"order/admin/index/admin-info.php\">我的资料</a></li>
+                                            <li><a href=\"order/admin/index/rbac-admin.php\">火车票订单</a></li>
+                                            <li><a href=\"order/admin/index/article-list.php\">常用联系人</a></li>
                                         </ul>
-                                    </li>
+                                    </li>";
+                                        }
+                                    ?>
                                     <li><a href="#">信息查询</a></li>
                                     <li><a href="#">信息反馈</a></li>
                                     <li><a href="#">关于我们</a></li>
@@ -147,7 +190,7 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="index.html" title=""><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a>
+                    <a href="index.php" title=""><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a>
                 </div>
                 <!--Right Col-->
                 <div class="nav-outer pull-right">
@@ -171,7 +214,7 @@
             
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.php"><img src="images/icons/empty.png" data-src="images/method-draw-image.png" alt="" title=""></a></div>
                 
                 <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             </nav>
@@ -191,7 +234,7 @@
                             <div class="status"><span>畅行</span></div>
                             <h2>心向世界，始于足下</h2>
                             <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
+                            <div class="btn-box"><a href="index.php" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
                         </div>
 
                         <div class="right-content">
@@ -212,7 +255,7 @@
                             <div class="status"><span>畅行</span></div>
                             <h2>心向世界，始于足下</h2>
                             <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
+                            <div class="btn-box"><a href="index.php" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
                         </div>
 
                         <div class="right-content">
@@ -233,7 +276,7 @@
                             <div class="status"><span>畅行</span></div>
                             <h2>心向世界，始于足下</h2>
                             <div class="text">无论你身在何处，只需轻轻触动屏幕，便可享受旅行的惬意.</div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
+                            <div class="btn-box"><a href="index.php" class="theme-btn btn-style-two"><span class="btn-title">了解更多</span></a></div>
                         </div>
 
                         <div class="right-content">
@@ -254,26 +297,34 @@
             <div class="property-search-form-two wow fadeInUp">
                 <div class="title"><h5>开始购票</h5></div>
                 <div class="form-inner">
-                    <form method="post" action="php/search.php">
+                    <form method="post" action="result.php#gradient-style">
                         <div class="row">
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12" style="position:relative;">
                                 <label>出发城市</label>
-                                <input id="input" name="input" class="iInput"/>
-                                <select class="custom-select-box" style="width:120px;" onchange="document.getElementById('input').value=this.value">
-                                    <option>太原</option>
-                                    <option>北京</option>
-                                    <option>上海</option>
-                                    <option>广州</option>
-                                    <option>成都</option>
-                                    <option>杭州</option>
+                                <!--input id="input" name="input" class="iInput"/-->
+                                <select class="custom-select-box" name="StartStation" style="width:120px;" onchange="document.getElementById('input').value=this.value">
+                                    <option>北京西</option>
+                                    <option>石家庄</option>
+                                    <option>郑州东</option>
+                                    <option>郑州</option>
+                                    <option>西安北</option>
+                                    <option>兰州西</option>
+                                    <option>上海虹桥</option>
+                                    <option>南京南</option>
+                                    <option>合肥南</option>
+                                    <option>武汉</option>
+                                    <option>正定机场</option>
+                                    <option>保定东</option>
+                                    <option>岳阳</option>
                                     <option>长沙</option>
+                                    <option>太原南</option>
                                 </select>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                                <label>出发日期</label><input id="meeting" type="date" value="getNowFormatDate()"/>
+                                <label>出发日期</label><input id="meeting" type="date" name="StartDate" value="getNowFormatDate()"/>
                                 <!--select class="custom-select-box">
                                     <option>National Parks</option>
                                     <option>National Parks</option>
@@ -288,7 +339,7 @@
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <label>车型</label>
-                                <select class="custom-select-box">
+                                <select class="custom-select-box" name="TrainType">
                                     <option>普通</option>
                                     <option>直达Z</option>
                                     <option>特快T</option>
@@ -302,7 +353,7 @@
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <label>最低可接受票价</label>
-                                <select class="custom-select-box">
+                                <select class="custom-select-box" name="LowPrice">
                                     <option>￥1000</option>
                                     <option>￥5000</option>
                                     <option>￥10000</option>
@@ -316,20 +367,28 @@
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <label>到达城市</label>
-                                <select class="custom-select-box">
-                                    <option>太原</option>
-                                    <option>北京</option>
-                                    <option>上海</option>
-                                    <option>广州</option>
-                                    <option>成都</option>
-                                    <option>杭州</option>
+                                <select class="custom-select-box" name="ArriveStation">
+                                    <option>北京西</option>
+                                    <option>石家庄</option>
+                                    <option>郑州东</option>
+                                    <option>郑州</option>
+                                    <option>西安北</option>
+                                    <option>兰州西</option>
+                                    <option>上海虹桥</option>
+                                    <option>南京南</option>
+                                    <option>合肥南</option>
+                                    <option>武汉</option>
+                                    <option>正定机场</option>
+                                    <option>保定东</option>
+                                    <option>岳阳</option>
                                     <option>长沙</option>
+                                    <option>太原南</option>
                                 </select>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                                <label>到达日期</label><input id="meeting1" type="date" value="getNowFormatDate()"/>
+                                <label>到达日期</label><input id="meeting1" type="date" name="ArriveDate" value="getNowFormatDate()"/>
                                 <!--select class="custom-select-box">
                                     <option>Any Bathrooms</option>
                                     <option>01 Bathrooms</option>
@@ -343,7 +402,7 @@
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <label>座位等级</label>
-                                <select class="custom-select-box">
+                                <select class="custom-select-box" name="SeatType">
                                     <option>无座</option>
                                     <option>硬座</option>
                                     <option>软座</option>
@@ -359,7 +418,7 @@
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <label>最高可接受票价</label>
-                                <select class="custom-select-box">
+                                <select class="custom-select-box" name="HighPrice">
                                     <option>￥1000</option>
                                     <option>￥5000</option>
                                     <option>￥10000</option>
@@ -391,7 +450,7 @@
                     <!-- Upper column -->
                     <div class="upper-column col-lg-3 col-md-12 col-sm-12">
                         <div class="footer-logo">
-                            <figure class="image"><a href="index.html"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt=""></a></figure>
+                            <figure class="image"><a href="index.php"><img src="images/icons/empty.png" data-src="images/method-draw-image.svg" alt=""></a></figure>
                         </div>
                     </div>
 
@@ -403,7 +462,7 @@
                     <!-- Upper column -->
                     <div class="upper-column col-lg-6 col-md-12 col-sm-12">
                         <div class="subscribe-form">
-                            <form method="post" action="index.html">
+                            <form method="post" action="index.php">
                                 <div class="form-group">
                                     <input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
                                     <button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>

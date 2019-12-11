@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84269c4-4bff-4078-9b34-0c8c075f5226" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +26,32 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dmx_train@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="MySQL - ticket@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - ticket@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - ticket@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticket: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - ticket@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticket: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="_tourist: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - ticket@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticket: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="_tu: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -36,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,28 +70,27 @@
       <server host="127.0.0.1" id="fd1c93ad-2d1a-448a-908a-afdd2cba54cc" name="Unnamed" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
   <component name="ProjectId" id="1UKlcnqj7MJNEZ1Nu0cn7Z1hL9P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NEXTINtel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\AppServ\www\TrainTicket\php\test" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Unnamed">
@@ -75,18 +98,15 @@
     </configuration>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6208a85" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -114,11 +134,67 @@
       <workItem from="1575540699352" duration="9855000" />
       <workItem from="1575591277386" duration="4552000" />
       <workItem from="1575622871701" duration="20063000" />
-      <workItem from="1575682256989" duration="3740000" />
+      <workItem from="1575682256989" duration="4453000" />
+      <workItem from="1575686801903" duration="997000" />
+      <workItem from="1575728776590" duration="373000" />
+      <workItem from="1575766436054" duration="11679000" />
+      <workItem from="1575790849065" duration="21791000" />
+      <workItem from="1575854190606" duration="15836000" />
+      <workItem from="1575876407766" duration="2921000" />
+      <workItem from="1575880937228" duration="5667000" />
+      <workItem from="1575892900590" duration="4227000" />
+      <workItem from="1575909756930" duration="4413000" />
+      <workItem from="1575942746412" duration="98000" />
+      <workItem from="1575946394296" duration="4538000" />
+      <workItem from="1575951504188" duration="5564000" />
+      <workItem from="1575969452842" duration="4228000" />
+      <workItem from="1575977949658" duration="12493000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="263" y="39" key="#CLI_Interpreters" timestamp="1575769309837">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="263" y="39" key="#CLI_Interpreters/0.0.1366.768@0.0.1366.768" timestamp="1575769309837" />
+    <state x="365" y="0" key="#PHP" timestamp="1575769313749">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="365" y="0" key="#PHP/0.0.1366.768@0.0.1366.768" timestamp="1575769313749" />
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575729052244">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1575729052244" />
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575989532868">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1575989532868" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1575728879539">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1575728879539" />
+    <state x="499" y="307" key="NewPhpFileDialog" timestamp="1575978914395">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="499" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1575978914395" />
+    <state x="184" y="26" key="SettingsEditor" timestamp="1575946739513">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1575946739513" />
+    <state x="404" y="124" width="540" height="524" key="StructurePopup" timestamp="1575910395599">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="404" y="124" width="540" height="524" key="StructurePopup/0.0.1366.768@0.0.1366.768" timestamp="1575910395599" />
+    <state x="363" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1575977962101">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="363" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1575977962101" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575981965633">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1575981965633" />
   </component>
 </project>

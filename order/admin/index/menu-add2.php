@@ -1,4 +1,7 @@
 <!--火车票提交界面-->
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -56,10 +59,26 @@
 								<li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
 							</ul>
 
-							<ul class="login-signup">
-								<li><a href="#">登录</a></li>
-								<li><a href="#">注册</a></li>
-							</ul>
+                            <?php
+                            if($_SESSION['UserName']==NULL){
+                                //用echo输出html标签不会报错
+                                //此刻用户还未登录或者注册
+                                echo '<ul class="login-signup">
+								      <li><a href="../../../login.html">登录</a></li>
+								      <li><a href="../../../login.html">注册</a></li>
+							          </ul>';
+                            }
+                            else{
+                                //已注册
+                                $welcome1='欢迎您';
+                                $welcome2=$_SESSION['UserName'];
+                                $welcome=$welcome1." ".$welcome2;
+                                echo "<ul class=\"login-signup\">
+                                      <li><a href='#'>$welcome</a></li>
+								      <li><a href=\"../../../php/logoff.php\">退出登录</a></li>
+							          </ul>";
+                            }
+                            ?>
 						</div>
 					</div>
 				</div>
@@ -71,7 +90,7 @@
 				<div class="auto-container">
 					<div class="main-box clearfix">
 						<div class="pull-left logo-outer">
-							<div class="logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
+							<div class="logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a></div>
 						</div>
 
 						<!--Nav Box-->
@@ -83,15 +102,15 @@
 							<nav class="main-menu navbar-expand-lg navbar-light">
 								<div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
 									<ul class="navigation clearfix">
-										<li><a href="../../../index.html">首页</a></li>
-										<li><a href="../../../result.html">余票查询</a></li>
-										<li><a href="../../../result.html">路线查询</a></li>
+										<li><a href="../../../index.php">首页</a></li>
+										<li><a href="../../../result.php">余票查询</a></li>
+										<li><a href="../../../result.php">路线查询</a></li>
 										<li><a href="#">出行指南</a></li>
-										<li class="dropdown"><a href="index.html">个人中心</a>
+										<li class="dropdown"><a href="#">个人中心</a>
 											<ul>
-												<li><a href="admin-info.html">我的资料</a></li>
-												<li><a href="rbac-admin.html">火车票订单</a></li>
-												<li><a href="article-list.html">常用联系人</a></li>
+												<li><a href="admin-info.php">我的资料</a></li>
+												<li><a href="rbac-admin.php">火车票订单</a></li>
+												<li><a href="article-list.php">常用联系人</a></li>
 											</ul>
 										</li>
 										<li><a href="#">信息查询</a></li>
@@ -105,7 +124,7 @@
 							<div class="outer-box">
 								<!-- Btn Box -->
 								<div class="btn-box">
-									<a href="menu-add2.html" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
+									<a href="menu-add2.php" class="theme-btn btn-style-one"><span class="btn-title">刷新</span></a>
 								</div>
 							</div>
 						</div>
@@ -119,7 +138,7 @@
 				<div class="auto-container clearfix">
 					<!--Logo-->
 					<div class="logo pull-left">
-						<a href="../../../index.html" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
+						<a href="../../../index.php" title=""><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.png" alt="" title=""></a>
 					</div>
 					<!--Right Col-->
 					<div class="nav-outer pull-right">
@@ -143,7 +162,7 @@
 
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
-					<div class="nav-logo"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
+					<div class="nav-logo"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/logo.png" alt="" title=""></a></div>
 
 					<ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
 				</nav>
@@ -156,7 +175,7 @@
 			<div class="auto-container">
 				<h1>个人中心</h1>
 				<ul class="page-breadcrumb">
-					<li><a href="../../../index.html">首页</a></li>
+					<li><a href="../../../index.php">首页</a></li>
 					<li>个人中心</li>
 					<li>订单提交</li>
 				</ul>
@@ -168,31 +187,46 @@
 	<!-- End Page Wrapper -->
 
 		<div class="wrap-container">
-				<form class="layui-form" style="width: 90%;padding-top: 20px;">
-					<div class="layui-form-item">
-						<label class="layui-form-label">车次：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="G1">
+				<form  id="refer" class="layui-form" style="width: 90%;padding-top: 20px;" method="post" action="../../../php/ticket_submit.php">
+					<?php
+
+                        $TrainID_=$_SESSION['TrainID'];
+                        $StartStation_=$_SESSION['StartStation'];
+                        $StartTime_=$_SESSION['StartTime'];
+                        $ArriveStation_=$_SESSION['ArriveStation'];
+                        $ArriveTime_=$_SESSION['ArriveTime'];
+
+                    echo"<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">车次：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"trainid\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$TrainID_\">
 						</div>
 					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">出发日期：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="2019-12-06">
+					<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">起始站：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"start\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$StartStation_\">
 						</div>
 					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">起始站：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="北京">
+					<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">出发时间：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"starttime\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$StartTime_\">
 						</div>
 					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">终点站：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="太原">
+					<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">终点站：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"arrive\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$ArriveStation_\">
 						</div>
 					</div>
+					<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">到达时间：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"arrivetime\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$ArriveTime_\">
+						</div>
+					</div>"
+                    ?>
 					<!--div class="layui-form-item">
 						<label class="layui-form-label">选择乘客：</label>
 						<div class="layui-input-block">
@@ -253,47 +287,89 @@
 							<input type="text" name="link2" required lay-verify="required" placeholder="请输入外部链接" autocomplete="off" class="layui-input">
 						</div>
 					</div-->
-					<div class="layui-form-item">
-						<label class="layui-form-label">乘车人：</label>
-						<div class="layui-input-block">
-							<input type="checkbox" name="label[tj]" title="张三" checked>
-							<input type="checkbox" name="label[zd]" title="李四">
-							<input type="checkbox" name="label[hot]" title="王五">
-							<input type="checkbox" name="label[hot]" title="xxx">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">乘车人：</label>
+                        <div class="layui-input-block">
+                            <?php
+                            //获取当前登录的账户名称及密码,用于查询数据库
+                            $username11=$_SESSION['UserName'];
+                            $password11=$_SESSION['UserPassword'];
+                            $Uid=$_SESSION['Uid'];
+
+                            //连接数据库
+                            $con=mysqli_connect("localhost","root","19990420",ticket);
+                            if(!$con){
+                                echo "数据库连接失败！请检查网络重新连接或联系管理员";
+                            }
+
+                            //多表联合查询
+                            //$re_temp=mysqli_query($con,"SELECT tourist_name,tourist_id,Tourist_sex,Tourist_phone FROM `_TU`,'_Tourist' WHERE _TU.user_name='$username' AND _TU.user_password='$password'");
+
+                            $sql = "SELECT _tu.tourist_name,_tu.tourist_id,_tourist.Tourist_sex,_tourist.Tourist_phone FROM _tu INNER JOIN _tourist ON _tu.tourist_id=_tourist.Tourist_ID WHERE _tu.user_name='$username11' AND _tu.user_password='$password11'";
+                            $result = mysqli_query($con, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                // 输出数据
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    //echo "id: " . $row["tourist_name"]. " - Name: " . $row["tourist_id"]. " " . $row["Tourist_sex"]. "<br>";
+                                    $_re1=$row["tourist_name"];
+                                    $_re2=$row["tourist_id"];
+                                    $re__=$_re1." ".$_re2;
+                                    echo"<input type=\"radio\" name=\"passenger\" value='$re__' title=\"$re__\">";
+                                }
+                            } else {
+                                echo "0 结果";
+                            }
+
+                            ?>
+                        </div>
+                    </div>
+
+
+                    <!--div class=\"layui-form-item\">
+                        <label class=\"layui-form-label\">乘车人：</label>
+                        <div class=\"layui-input-block\">
+                            <input type=\"checkbox\" name=\"PassengerName\" title=\"张三\" checked>
+                            <input type=\"checkbox\" name=\"PassengerName\" title=\"李四\">
+                            <input type=\"checkbox\" name=\"PassengerName\" title=\"王五\">
+                            <input type=\"checkbox\" name=\"PassengerName\" title=\"xxx\">
+                        </div>
+                    </div>
+                    <div class=\"layui-form-item\">
+                        <label class=\"layui-form-label\">身份证号：</label>
+                        <div class=\"layui-input-block\">
+                            <input type=\"text\" name=\"username\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"1234567890\">
+                        </div>
+                    </div-->
+
+
+					<?php
+                    $XseatsType_=$_SESSION['XseatsType'];
+                    echo "<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">座位类型：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"XseatsType__\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$XseatsType_\">
 						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">身份证号：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="1234567890">
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">座位类型：</label>
-						<div class="layui-input-block">
-							<select name="category" lay-verify="required">
-								<option value="0">一等</option>
-								<option value="010">二等</option>
-								<option value="011">硬座</option>
-								
-							</select>
-						</div>
-					</div>
+					</div>";
+                    ?>
 					<div class="layui-form-item">
 						<label class="layui-form-label">乘客类型：</label>
 						<div class="layui-input-block">
-							<input type="checkbox" name="label[tj]" title="成人" checked>
-							<input type="checkbox" name="label[zd]" title="儿童">
-							<input type="checkbox" name="label[hot]" title="学生">
-							<input type="checkbox" name="label[hot]" title="军人及残疾人">
+							<input type="checkbox" name="passengerType" title="成人" checked>
+							<input type="checkbox" name="passengerType" title="儿童">
+							<input type="checkbox" name="passengerType" title="学生">
+							<input type="checkbox" name="passengerType" title="军人及残疾人">
 						</div>
 					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label">费用：</label>
-						<div class="layui-input-block">
-							<input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="￥120">
+					<?php
+                    $Price_=$_SESSION['Price'];
+                    echo "<div class=\"layui-form-item\">
+						<label class=\"layui-form-label\">费用：</label>
+						<div class=\"layui-input-block\">
+							<input type=\"text\" name=\"fare\" disabled autocomplete=\"off\" class=\"layui-input layui-disabled\" value=\"$Price_\">
 						</div>
-					</div>
+					</div>";
+                    ?>
 					<!--div class="layui-form-item">
 						<label class="layui-form-label">图标：</label>
 						<div class="layui-input-block">
@@ -313,7 +389,7 @@
 
 					<div class="layui-form-item">
 						<div class="layui-input-block">
-							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" data-url="rbac-admin.html">立即购票</button>
+							<button class="layui-btn layui-btn-normal" type="submit" >立即购票</button>
 							<button type="reset" class="layui-btn layui-btn-primary" data-url="../../../result.html">重新查询</button>
 						</div>
 					</div>
@@ -329,7 +405,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-3 col-md-12 col-sm-12">
 						<div class="footer-logo">
-							<figure class="image"><a href="../../../index.html"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
+							<figure class="image"><a href="../../../index.php"><img src="../../../images/icons/empty.png" data-src="../../../images/method-draw-image.svg" alt=""></a></figure>
 						</div>
 					</div>
 
@@ -341,7 +417,7 @@
 					<!-- Upper column -->
 					<div class="upper-column col-lg-6 col-md-12 col-sm-12">
 						<div class="subscribe-form">
-							<form method="post" action="../../../index.html">
+							<form method="post" action="../../../index.php">
 								<div class="form-group">
 									<input type="email" name="search" value="" placeholder="搜一搜，更精彩" required="">
 									<button type="submit" class="theme-btn btn-style-two"><span class="btn-title">开始搜索</span></button>
