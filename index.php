@@ -164,7 +164,22 @@
                                         }
                                     ?>
                                     <li><a href="#">信息查询</a></li>
-                                    <li><a href="#">信息反馈</a></li>
+                                    <?php
+                                    if($_SESSION['UserName']==NULL){
+                                        echo "<li class=\"dropdown\"><a href=\"login.html\">账户信息变更,请先登录</a>
+                                        
+                                                  </li>";
+                                    }
+                                    else{
+                                        echo "<li class=\"dropdown\"><a href=\"#\">账户信息变更</a>
+                                        <ul>
+                                            <li><a href=\"php/delete/delete_user_confirm.php\">账户注销</a></li>
+                                            <li><a href=\"#\">常用联系人删除</a></li>
+                                            <li><a href=\"#\">订单删除</a></li>
+                                        </ul>
+                                    </li>";
+                                    }
+                                    ?>
                                     <li><a href="#">关于我们</a></li>
                                 </ul>
                             </div>

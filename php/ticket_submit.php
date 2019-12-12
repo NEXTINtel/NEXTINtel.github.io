@@ -25,7 +25,7 @@ if(!$con){
 }
 
 //向火车票订单表中添加信息
-$sql1 = "INSERT INTO _tickets_info (OrderID, TrainID, StartStation, StartTime, ArriveStation, ArriveTime, Passenger, SeatType, CompartmentID, SeatID, SeatAllID, Price, CreateTime) VALUES (RAND()*10^6,'$TrainID_','$StartStation_','$StartTime_','$ArriveStation_','$ArriveTime_','$Passenger','$SeatType','$CompartmentID','$SeatID','$SeatAllID','$SeatPrice',NOW())";
+$sql1 = "INSERT INTO _tickets_info (OrderID, TrainID, StartStation, StartTime, ArriveStation, ArriveTime, Passenger, SeatType, CompartmentID, SeatID, SeatAllID, Price, CreateTime,username_temp,password_temp) VALUES (RAND()*10^6,'$TrainID_','$StartStation_','$StartTime_','$ArriveStation_','$ArriveTime_','$Passenger','$SeatType','$CompartmentID','$SeatID','$SeatAllID','$SeatPrice',NOW(),'$UserName','$UserPassword')";
 
 //向火车票旅客用户表中添加记录，以便进行内连接
 $sql2="INSERT INTO _tpu (TrainID, Passenger, UserName, UserPassword) VALUES ('$TrainID_','$Passenger','$UserName','$UserPassword')";
