@@ -151,6 +151,9 @@
       <workItem from="1575977949658" duration="12493000" />
       <workItem from="1576078617494" duration="151000" />
       <workItem from="1576116505364" duration="2688000" />
+      <workItem from="1576200742299" duration="69000" />
+      <workItem from="1576289229458" duration="2093000" />
+      <workItem from="1576509126849" duration="3032000" />
     </task>
     <servers />
   </component>
@@ -182,22 +185,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1575728879539" />
-    <state x="499" y="307" key="NewPhpFileDialog" timestamp="1576116641537">
+    <state x="499" y="307" key="NewPhpFileDialog" timestamp="1576509247919">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="499" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1576116641537" />
+    <state x="499" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1576509247919" />
     <state x="184" y="26" key="SettingsEditor" timestamp="1575946739513">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1575946739513" />
-    <state x="404" y="124" width="540" height="524" key="StructurePopup" timestamp="1575910395599">
+    <state x="404" y="124" width="582" height="524" key="StructurePopup" timestamp="1576291084006">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="404" y="124" width="540" height="524" key="StructurePopup/0.0.1366.768@0.0.1366.768" timestamp="1575910395599" />
-    <state x="363" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1576116546924">
+    <state x="404" y="124" width="582" height="524" key="StructurePopup/0.0.1366.768@0.0.1366.768" timestamp="1576291084006" />
+    <state x="363" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1576509165222">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="363" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1576116546924" />
+    <state x="363" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1576509165222" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575981965633">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

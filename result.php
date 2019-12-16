@@ -127,8 +127,8 @@
                                         echo "<li class=\"dropdown\"><a href=\"#\">账户信息变更</a>
                                         <ul>
                                             <li><a href=\"php/delete/delete_user_confirm.php\">账户注销</a></li>
-                                            <li><a href=\"#\">常用联系人删除</a></li>
-                                            <li><a href=\"#\">订单删除</a></li>
+                                            <li><a href=\"order/admin/index/article-list.php\">常用联系人删除</a></li>
+                                            <li><a href=\"order/admin/index/rbac-admin.php\">订单删除</a></li>
                                         </ul>
                                     </li>";
                                     }

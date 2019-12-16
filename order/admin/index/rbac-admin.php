@@ -252,6 +252,7 @@
                                 $sql = "SELECT * FROM _tickets_info natural JOIN _tpu WHERE UserName='$username' AND UserPassword='$password'" ;
                                 $result = mysqli_query($con, $sql);
 
+                                $arr=array();
                                 if (mysqli_num_rows($result) > 0) {
                                     // 输出数据
                                     while($row = mysqli_fetch_assoc($result)) {
@@ -270,6 +271,22 @@
                                         $_re12_=$row["Price"];
                                         $_re13_=$row["CreateTime"];
 
+                                        $arr[]=$_re1_;
+                                        $arr[]=$_re2_;
+                                        $arr[]=$_re3_;
+                                        $arr[]=$_re4_;
+                                        $arr[]=$_re5_;
+                                        $arr[]=$_re6_;
+                                        $arr[]=$_re7_;
+                                        $arr[]=$_re8_;
+                                        $arr[]=$_re9_;
+                                        $arr[]=$_re10_;
+                                        $arr[]=$_re11_;
+                                        $arr[]=$_re12_;
+                                        $arr[]=$_re13_;
+
+                                        $_SESSION['delete_ticket']=$arr;
+
                                         $_re14_=$_re3_."-->".$_re5_;
                                         echo "<tr>
                                 <td><input type=\"checkbox\" name=\"\" lay-skin=\"primary\"  data-id=\"1\"></td>
@@ -278,12 +295,14 @@
                                 <td class=\"hidden-xs\">$_re7_</td>
                                 <td class=\"hidden-xs\">$_re4_</td>
                                 <td class=\"hidden-xs\">$_re14_</td>
-                                <td><button class=\"layui-btn layui-btn-mini layui-btn-warm\">正常</button></td>
+                                <td><button class=\"layui-btn layui-btn-mini layui-btn-normal\">正常</button></td>
                                 <td>
+                                    <form method='post' action='../../../php/delete/delete_ticket_confirm.php'>
                                     <div class=\"layui-inline\">
-                                        <button class=\"layui-btn layui-btn-small layui-btn-normal  edit-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe642;</i></button>
-                                        <button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe640;</i></button>
-                                    </div>
+											<button class=\"layui-btn layui-btn-small layui-btn-normal  edit-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe642;</i></button>
+                                         <button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" type='submit' name='delete' value='$arr' data-id=\"1\" data-url=\"../../../php/delete/delete_ticket_confirm.php\"><i class=\"layui-icon\">&#xe640;</i></button>
+										</div>
+                                    </form>
                                 </td>
                             </tr>";
                                     }
@@ -324,6 +343,130 @@
                                 </td>
                             </tr-->
 						</table>
+
+                        <br/>
+                        <br/>
+
+                        <!--已删除订单页面-->
+                        <table class="layui-table" lay-even lay-skin="nob">
+                            <colgroup>
+                                <col width="50">
+                                <col class="hidden-xs" width="50">
+                                <col width="200">
+                                <col class="hidden-xs">
+                                <col class="hidden-xs">
+                                <col class="hidden-xs">
+                                <col class="hidden-xs" width="100">
+                                <col width="150">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
+                                <th class="hidden-xs">车次</th>
+                                <th>订单号</th>
+                                <th class="hidden-xs">乘客信息</th>
+                                <th class="hidden-xs">出发时间</th>
+                                <th class="hidden-xs">始发站-->终点站</th>
+                                <th class="hidden-xs">状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            //获取当前登录的账户名称及密码,用于查询数据库
+                            $username_=$_SESSION['UserName'];
+                            $password_=$_SESSION['UserPassword'];
+                            $Uid=$_SESSION['Uid'];
+
+                            //连接数据库
+                            $con_=mysqli_connect("localhost","root","19990420",ticket);
+                            if(!$con_){
+                                echo "数据库连接失败！请检查网络重新连接或联系管理员";
+                            }
+
+                            //多表联合查询
+                            //$re_temp=mysqli_query($con,"SELECT tourist_name,tourist_id,Tourist_sex,Tourist_phone FROM `_TU`,'_Tourist' WHERE _TU.user_name='$username' AND _TU.user_password='$password'");
+
+                            $sql_ = "SELECT * FROM delete_ticket  WHERE Username='$username_' AND Password='$password_'" ;
+                            $result_ = mysqli_query($con_, $sql_);
+
+
+                            if (mysqli_num_rows($result_) > 0) {
+                                // 输出数据
+                                while($row_ = mysqli_fetch_assoc($result_)) {
+                                    //echo "id: " . $row["tourist_name"]. " - Name: " . $row["tourist_id"]. " " . $row["Tourist_sex"]. "<br>";
+                                    $_re1_1=$row_["OrderID"];
+                                    $_re2_1=$row_["TrainID"];
+                                    $_re3_1=$row_["StartStation"];
+                                    $_re4_1=$row_["StartTime"];
+                                    $_re5_1=$row_["ArriveStation"];
+                                    $_re6_1=$row_["ArriveTime"];
+                                    $_re7_1=$row_["Passenger"];
+                                    $_re8_1=$row_["SeatType"];
+                                    $_re9_1=$row_["CompartmentID"];
+                                    $_re10_1=$row_["SeatID"];
+                                    $_re11_1=$row_["SeatAllID"];
+                                    $_re12_1=$row_["Price"];
+                                    $_re13_1=$row_["DeleteTime"];
+
+
+                                    $_re14_1=$_re3_1."-->".$_re5_1;
+                                    echo "<tr>
+                                <td><input type=\"checkbox\" name=\"\" lay-skin=\"primary\"  data-id=\"1\"></td>
+                                <td class=\"hidden-xs\">$_re2_1</td>
+                                <td>$_re1_1</td>
+                                <td class=\"hidden-xs\">$_re7_1</td>
+                                <td class=\"hidden-xs\">$_re4_1</td>
+                                <td class=\"hidden-xs\">$_re14_1</td>
+                                <td><button class=\"layui-btn layui-btn-mini layui-btn-warm\">已退票</button></td>
+                                <td>
+                                    
+                                    <div class=\"layui-inline\">
+											<button class=\"layui-btn layui-btn-small layui-btn-normal  edit-btn\" data-id=\"1\" data-url=\"\"><i class=\"layui-icon\">&#xe642;</i></button>
+                                         <button class=\"layui-btn layui-btn-small layui-btn-danger del-btn\" type='submit' name='delete' value='$arr' data-id=\"1\" data-url=\"../../../php/delete/delete_ticket_confirm.php\"><i class=\"layui-icon\">&#xe640;</i></button>
+										</div>
+                                    
+                                </td>
+                            </tr>";
+                                }
+                            } else {
+                                echo "0 结果";
+                            }
+                            ?>
+                            </tbody>
+
+                            <!--tr>
+                                <td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
+                                <td class="hidden-xs">G2</td>
+                                <td>李四</td>
+                                <td class="hidden-xs">T0987654321</td>
+                                <td class="hidden-xs">1989-10-14</td>
+                                <td class="hidden-xs">北京->长沙</td>
+                                <td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
+                                <td>
+                                    <div class="layui-inline">
+                                        <button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
+                                        <button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" lay-skin="primary"  data-id="1"></td>
+                                <td class="hidden-xs">G3</td>
+                                <td>王五</td>
+                                <td class="hidden-xs">T5647382910</td>
+                                <td class="hidden-xs">1989-10-14</td>
+                                <td class="hidden-xs">北京->成都</td>
+                                <td><button class="layui-btn layui-btn-mini layui-btn-normal">正常</button></td>
+                                <td>
+                                    <div class="layui-inline">
+                                        <button class="layui-btn layui-btn-small layui-btn-normal  edit-btn" data-id="1"><i class="layui-icon">&#xe642;</i></button>
+                                        <button class="layui-btn layui-btn-small layui-btn-danger del-btn" data-id="1"><i class="layui-icon">&#xe640;</i></button>
+                                    </div>
+                                </td>
+                            </tr-->
+                        </table>
+
 						<!--tp分页-->
 						<div class="page-wrap">
 							<ul class="pagination">

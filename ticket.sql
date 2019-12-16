@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019-12-12 02:56:11
+-- Generation Time: 2019-12-16 16:08:21
 -- 服务器版本： 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -73,6 +73,38 @@ CREATE TABLE `db` (
 
 INSERT INTO `db` (`Host`, `Db`, `User`, `Select_priv`, `Insert_priv`, `Update_priv`, `Delete_priv`, `Create_priv`, `Drop_priv`, `Grant_priv`, `References_priv`, `Index_priv`, `Alter_priv`, `Create_tmp_table_priv`, `Lock_tables_priv`, `Create_view_priv`, `Show_view_priv`, `Create_routine_priv`, `Alter_routine_priv`, `Execute_priv`, `Event_priv`, `Trigger_priv`) VALUES
 ('localhost', 'sys', 'mysql.sys', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'Y');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `delete_ticket`
+--
+
+CREATE TABLE `delete_ticket` (
+  `OrderID` varchar(150) NOT NULL,
+  `TrainID` varchar(15) NOT NULL,
+  `StartStation` varchar(20) NOT NULL,
+  `StartTime` datetime NOT NULL,
+  `ArriveStation` varchar(20) NOT NULL,
+  `ArriveTime` datetime NOT NULL,
+  `Passenger` varchar(100) NOT NULL,
+  `SeatType` varchar(15) NOT NULL,
+  `CompartmentID` varchar(15) NOT NULL,
+  `SeatID` varchar(20) NOT NULL,
+  `SeatAllID` varchar(20) NOT NULL,
+  `Price` varchar(20) NOT NULL,
+  `DeleteTime` datetime NOT NULL,
+  `Username` varchar(30) NOT NULL,
+  `Password` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `delete_ticket`
+--
+
+INSERT INTO `delete_ticket` (`OrderID`, `TrainID`, `StartStation`, `StartTime`, `ArriveStation`, `ArriveTime`, `Passenger`, `SeatType`, `CompartmentID`, `SeatID`, `SeatAllID`, `Price`, `DeleteTime`, `Username`, `Password`) VALUES
+('1.145332508855809', 'G429', '北京西', '2020-01-01 10:45:00', '石家庄', '2019-01-01 12:09:00', '2 2', '一等座', '4', '96', '4车厢96号', '300', '2019-12-16 23:49:59', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+('1.945595832490917', 'Z1', '北京西', '2020-01-01 18:00:00', '石家庄', '2020-01-01 20:24:00', '1 1', '一等座', '4', '96', '4车厢96号', '300', '2019-12-16 23:56:45', 'hhd', 'a842d30704f61b94c20e66ecc7531c35');
 
 -- --------------------------------------------------------
 
@@ -3649,6 +3681,13 @@ CREATE TABLE `_tickets_info` (
   `password_temp` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
+--
+-- 转存表中的数据 `_tickets_info`
+--
+
+INSERT INTO `_tickets_info` (`OrderID`, `TrainID`, `StartStation`, `StartTime`, `ArriveStation`, `ArriveTime`, `Passenger`, `SeatType`, `CompartmentID`, `SeatID`, `SeatAllID`, `Price`, `CreateTime`, `username_temp`, `password_temp`) VALUES
+('4.158501207976137', 'Z1', '北京西', '2020-01-01 18:00:00', '石家庄', '2020-01-01 20:24:00', '2 2', '一等座', 4, '96', '4车厢96号', 300, '2019-12-17 00:02:45', 'hhd', 'a842d30704f61b94c20e66ecc7531c35');
+
 -- --------------------------------------------------------
 
 --
@@ -3663,6 +3702,18 @@ CREATE TABLE `_tourist` (
   `Tourist_phone` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
+--
+-- 转存表中的数据 `_tourist`
+--
+
+INSERT INTO `_tourist` (`Tourist_ID`, `Tourist_name`, `Tourist_sex`, `Tourist_email`, `Tourist_phone`) VALUES
+('1', '1', '男', '1', 1),
+('2', '2', '男', '2', 2),
+('3', '3', '男', '3', 3),
+('4', '4', '男', '4', 4),
+('5', '5', '男', '5', 5),
+('6', '6', '男', '6', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -3675,6 +3726,13 @@ CREATE TABLE `_tpu` (
   `UserName` varchar(20) NOT NULL,
   `UserPassword` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `_tpu`
+--
+
+INSERT INTO `_tpu` (`TrainID`, `Passenger`, `UserName`, `UserPassword`) VALUES
+('Z1', '2 2', 'hhd', 'a842d30704f61b94c20e66ecc7531c35');
 
 -- --------------------------------------------------------
 
@@ -3740,6 +3798,18 @@ CREATE TABLE `_tu` (
   `user_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `_tu`
+--
+
+INSERT INTO `_tu` (`tourist_id`, `tourist_name`, `user_name`, `user_password`) VALUES
+(1, '1', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+(2, '2', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+(3, '3', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+(4, '4', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+(5, '5', 'hhd', 'a842d30704f61b94c20e66ecc7531c35'),
+(6, '6', 'hhd', 'a842d30704f61b94c20e66ecc7531c35');
+
 -- --------------------------------------------------------
 
 --
@@ -3758,6 +3828,13 @@ CREATE TABLE `_user` (
   `Remarks` varchar(128) NOT NULL,
   `TouristID` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+--
+-- 转存表中的数据 `_user`
+--
+
+INSERT INTO `_user` (`Uid`, `Uname`, `Uemail`, `Upasswd`, `Ucreatime`, `Name`, `Phone`, `IDnumber`, `Remarks`, `TouristID`) VALUES
+(5, 'hhd', '3351995058@qq.com', 'a842d30704f61b94c20e66ecc7531c35', '2019-12-12 20:30:02', NULL, NULL, 0, '', 0);
 
 --
 -- Indexes for dumped tables
@@ -3972,7 +4049,7 @@ ALTER TABLE `_seat_type`
 -- Indexes for table `_tickets_info`
 --
 ALTER TABLE `_tickets_info`
-  ADD PRIMARY KEY (`OrderID`) USING BTREE;
+  ADD PRIMARY KEY (`OrderID`);
 
 --
 -- Indexes for table `_tourist`
