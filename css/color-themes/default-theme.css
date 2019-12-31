@@ -101,7 +101,8 @@
 .sidebar .search-box .form-group button,
 .theme_color,
 a{
-	color: #92c800;
+	/*color: #92c800;*/
+	color:#ff7e00;
 }
 
 
@@ -162,7 +163,8 @@ a.ui-button:active, .ui-button:active,
 .comments-area .comment .comment-reply,
 .btn-style-two,
 .btn-style-one:before{
-	background-color: #92c800;
+	/*background-color: #92c800;*/
+	background-color:#ff7e00;
 }
 
 
@@ -199,7 +201,8 @@ a.ui-button:active, .ui-button:active,
 .main-header .search-box-outer .dropdown-menu,
 .main-menu .navigation > li > ul > li  > ul > li > a:hover,
 .main-menu .navigation > li > ul > li:hover > a{
-	border-color: #92c800;
+	/*border-color: #92c800;*/
+	border-color:#ff7e00;
 }
 
 
@@ -208,13 +211,15 @@ a.ui-button:active, .ui-button:active,
 
 .why-choose-us .image-box .contact-info:before,
 .modern-property .status:before{
-	border-bottom-color: #92c800
+	/*border-bottom-color: #92c800*/
+	border-bottom-color: #ff7e00;
 }
 
 @media only screen and (max-width: 767px){
 	
 	.main-menu .navbar-header .navbar-toggle{
-		border-color:#92c800;
+		/*border-color:#92c800;*/
+		border-color:#ff7e00;
 	}
 
 	.main-menu .navbar-header .navbar-toggle,
@@ -234,7 +239,8 @@ a.ui-button:active, .ui-button:active,
 	.main-menu .navigation > li .mega-menu-bar .column > ul > li > a:hover,
 	.main-menu .navbar-collapse > .navigation > li.current > a,
 	.main-menu .navbar-collapse > .navigation > li.current-menu-item > a{
-		background-color: #92c800;
+		/*background-color: #92c800;*/
+		background-color: #ff7e00;
 	}
 	
 }
