@@ -1,0 +1,29 @@
+#search {
+    width: 440px;
+    height: 40px;
+    border:none;    /*取消默认的边框以设置自定义边框*/
+    outline:none;   /*取消浏览器默认的蓝光边框以设置自定义的输入框*/
+    font-size: 16px;
+    color: rgb(112, 112, 112);
+    margin-left: 10px;
+}
+.searchbar {        /*目的是设置自定义边框，比如圆角与阴影*/
+    border: rgb(218, 218, 218) solid 1px;
+    border-radius: 2em;
+    width: 552px;
+    height: 42px;
+    box-shadow: 0px 0px 5px rgb(212, 212, 212);
+    margin: 0 auto;
+}
+
+.mcp {
+    height: 35px;
+}
+
+.mg {
+    height: 25px;
+    margin-left: 15px;
+}
+#search, .mcp, .mg {
+    vertical-align: middle;
+}
