@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>NEXTINtel - Manjaro基本配置 | Next Innovation Of Learning</title>
+    <title>NEXTINtel - Deepin基本配置 | Next Innovation Of Learning</title>
     <!-- Stylesheets -->
     <link href="../../../css/bootstrap.css" rel="stylesheet">
     <link href="../../../css/style.css" rel="stylesheet">
@@ -256,112 +256,15 @@
                         <div class="news-block-two">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image wow fadeIn"><img src="../../../images/icons/empty.png" data-src="../../../images/notes/OS/Manjaro.jpg" alt=""></figure>
+                                    <figure class="image wow fadeIn"><img src="../../../images/icons/empty.png" data-src="../../../images/notes/OS/Deepin.jpg" alt=""></figure>
                                 </div>
                                 <div class="lower-content">
                                     <ul class="post-info clearfix">
                                         <li><font color="#ff4500"><span class="icon fa fa-calendar-day"></span></font> 2019-10-1</li>
-                                        <li><font color="#ff4500"><span class="icon fa fa-book-reader"></span></font> 阅全文约12分</li>
+                                        <li><font color="#ff4500"><span class="icon fa fa-book-reader"></span></font> 阅全文约2分</li>
                                     </ul>
-                                    <h3>Manjaro OS基本配置</h3>
-                                    <p>&nbsp; &nbsp; &nbsp; &nbsp; 作为Arch Linux的衍生版本，Manjaro继承了Linux的安全稳定，同时摒弃了Arch对用户的非友好，提供了优质的GUI。Manjaro一共有4个版本：XFCE、GNOME、KDE、Architect，让用户可以有不同的选择，提供了超高的自由度。下面介绍安装KDE版本后的一些基本配置：</p>
-
-                                    <blockquote>Manjaro安装时的一些注意事项</blockquote>
-                                    <h4>1：含N卡的计算机安装时卡logo无法进入</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决方法：(1)开机进入系统引导界面后，按“e”进入grub编辑模式，<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)找到quiet,在其后空一格添加：</p><pre class="program"><code class="language-powershell">nouveau.modeset=0</code></pre><p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)按F10或Ctrl+x退出编辑.</p>
-                                    <h4>2：安装好系统避免每次进入系统都操作上一步</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决办法：(1)打开<strong>etc/default/grub</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在<strong>GRUB_CMDLINE_LINUX_DEFAULT</strong>的属性中空一格添加:</p><pre class="program"><code class="language-powershell">pci=noacpi</code></pre><p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)终端执行：<pre class="program"><code class="language-powershell">sudo grub-mkconfig</code></pre></p>
-                                    <h4>3：Manjaro安装/更新完成后重启报错：can't access tty,job control turned off</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://blog.csdn.net/Core00077/article/details/85228956">Manjaro解决tty报错</a></p>
-
-
-                                    <blockquote>Manjro安装后的配置步骤</blockquote>
-                                    <h4>1：切换软件源，提高网速，防止后面更新系统时出现超时bug以及UI美化时主题难以下载</h4>
-                                    <p>&nbsp; &nbsp; &nbsp; &nbsp; (1)执行：</p><pre class="program"><code class="language-powershell">sudo pacman-mirrors -i -c China -m rank</code></pre>
-                                    <p>&nbsp; &nbsp; &nbsp; &nbsp; (2)弹出选择框后，全部勾选即可</p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)打开<strong>/etc/pacman.conf</strong>文件，粘贴下面3行代码，然后保存:</p><pre class="program"><code class="language-powershell">[archlinuxcn]<br>SigLevel = Optional TrustedOnly<br>Server=https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)执行：</p><pre class="program"><code class="language-powershell">sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring</code></pre>
-                                    <h4>2：通过开始菜单中的"添加/删除软件"来更新系统，其它方式目前会出现bug</h4>
-                                    <h4>3：更新系统后会出现中文显示乱码，用以下命令修复：</h4>
-                                    <pre class="program"><code class="language-powershell">pacman -S wqy-microhei</code></pre>
-                                    <h4>4：重启系统（此步必须完成，否则后面会打不开文件夹）</h4>
-                                    <h4>5：进入系统设置，更新软件包，让火狐等变成中文版</h4>
-                                    <h4>6：用yaourt命令代替pacman命令(让命令简洁化)：</h4>
-                                    <pre class="program"><code class="language-powershell">sudo pacman -S yaourt</code></pre>
-                                    <h4>7：安装搜狗中文输入法</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：</p><pre class="program"><code class="language-powershell">yaourt -S qtwebkit-bin</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)执行：</p><pre class="program"><code class="language-powershell">sudo pacman -S fcitx-sogoupinyin fcitx-configtool fcitx-im fcitx-sogoupinyin</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)执行：</p><pre class="program"><code class="language-powershell">sudo pacman -U https://arch-archive.tuna.tsinghua.edu.cn/2019/04-29/community/os/x86_64/fcitx-qt4-4.2.9.6-1-x86_64.pkg.tar.xz</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)打开：<strong>/etc/environment</strong>，粘贴如下内容,并保存：</p><pre class="program"><code class="language-powershell">export GTK_IM_MODULE=fcitx<br>export QT_IM_MODULE=fcitx<br>export XMODIFIERS="@im=fcitx"</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)执行：</p><pre class="program"><code class="language-powershell">qtconfig-qt4</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)在出现的图形化界面中找到<strong>Interface</strong>选项，找到<strong>Defult Input Method</strong>并将其设置为<strong>fcitx</strong>，点击<strong>左上角保存</strong>即可</p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)重启计算机即可正常使用</p>
-                                    <h4>8：打开“系统设置”，进行系统UI美化</h4>
-                                    <h4>9：配置java环境</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)终端输入命令：</p><pre class="program"><code class="language-powershell">yaourt jdk</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择想要安装的jdk版本即可</p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)最后输入java以验证java环境是否配置成功</p>
-                                    <h4>10：安装chrome</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S google-chrome</code></pre>
-                                    <h4>11：安装vim</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S vim</code></pre>
-                                    <h4>12：安装visual studio code</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S visual-studio-code-bin</code></pre>
-                                    <h4>13：安装网易云音乐</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S netease-cloud-music</code></pre>
-                                    <h4>14：安装teamviewer</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S teamviewer</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：如果无法连接到计算机请执行如下步骤(执行前请彻底关闭teamviewer)：</p><pre class="program"><code class="language-powershell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：sudo systemctl stop teamviewerd.service<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)执行：sudo systemctl start teamviewerd.service</code></pre>
-                                    <h4>15：安装VMware Pro </h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)执行：</p><pre class="program"><code class="language-powershell">sudo pacman -S fuse2 gtkmm  pcsclite libcanberra</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)查看内核版本：</p><pre class="program"><code class="language-powershell">uname -r</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)执行(注意选择第(2)步中指定内核版本)：</p><pre class="program"><code class="language-powershell">sudo pacman -S linux-headers</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)执行(如果已有，可不执行)：</p><pre class="program"><code class="language-powershell">yaourt -S yay</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)执行：</p><pre class="program"><code class="language-powershell">yay -S --noconfirm --needed ncurses5-compat-libs</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行：</p><pre class="program"><code class="language-powershell">yay -S vmware-workstation</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)为相应的服务设置开机启动：</p><pre class="program"><code class="language-powershell">sudo systemctl enable vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8)开启相应服务：</p><pre class="program"><code class="language-powershell">sudo systemctl start  vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(9)查看服务状态：</p><pre class="program"><code class="language-powershell">sudo systemctl status vmware-networks.service  vmware-usbarbitrator.service vmware-hostd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10)重启系统以加载VNware模块</p>
-                                    <h4>16：安装Jetbrains系列软件(以idea为例)</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)官网下载idea安装包(后缀名：xxx.tar.gz)<a target="_blank" href="https://www.jetbrains.com/idea/download/#section=linux">idea安装包下载</a></p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在opt下创建Intellij文件夹：</p><pre class="program"><code class="language-powershell">sudo mkdir /opt/Intellij</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)解压到创建好的的指定文件夹：</p><pre class="program"><code class="language-powershell">sudo tar -zxvf xxx.tar.gz -C /opt/Intellij</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)切换到解压后的文件夹：</p><pre class="program"><code class="language-powershell">cd /opt/Intellij/xxx</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)给脚本安装程序赋予执行权限：</p><pre class="program"><code class="language-powershell">sudo chmod a=+rx bin/idea.sh</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行脚本安装程序：</p><pre class="program"><code class="language-powershell">bin/idea.sh</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意：在GUI安装界面注意勾选勾选<strong>Create a desktop entry for integration with system application menu</strong> 和 <strong>for all users (requires superuser privileges)</strong> 以使得可以通过图标来使用idea</p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附：<a target="_blank" href="https://www.jiweichengzhu.com/article/eb340e382d1d456c84a1d190db12755c">idea激活码</a></p>
-                                    <h4>17：安装kvm:</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装KVM所需的所有软件包：</p><pre class="program"><code class="language-powershell">sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)安装ebtables和iptables软件包：</p><pre class="program"><code class="language-powershell">sudo pacman -S ebtables iptables</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)打开<strong>etc/pacman.conf</strong>,粘贴如下命令并保存：</p><pre class="program"><code class="language-powershell"><br>[archlinuxfr]<br>SigLevel = Never<br>Server = http://repo.archlinux.fr/$arch</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)更新Pacman数据库：</p><pre class="program"><code class="language-powershell">sudo pacman -Syy</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)使用AUR帮助程序安装libguestfs工具：</p><pre class="program"><code class="language-powershell">yaourt -S --noconfirm --needed libguestfs</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)使libvirtd服务开机启动：</p><pre class="program"><code class="language-powershell">sudo systemctl enable libvirtd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)启用libvirtd服务：</p><pre class="program"><code class="language-powershell">sudo systemctl start libvirtd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8)打开<strong>/etc/libvirt/libvirtd.conf</strong>，替换或增添如下内容：</p><pre class="program"><code class="language-powershell"><br>将UNIX域套接字组所有权设置为libvirt：unix_sock_group = "libvirt"<br>设置R/W套接字的UNIX套接字权限：unix_sock_rw_perms = "0770"</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(9)将当前用户帐户添加到libvirt组：</p><pre class="program"><code class="language-powershell"><br>sudo usermod -a -G libvirt $(whoami)<br>newgrp libvirt</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(10)重启libvirt守护进程：</p><pre class="program"><code class="language-powershell">sudo systemctl restart libvirtd.service</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(11)启用虚拟化嵌套：</p><pre class="program"><code class="language-powershell">sudo modprobe -r kvm_intel<br>sudo modprobe kvm_intel nested=1<br>echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf&nbsp;选择Y即可</code></pre>
-                                    <h4>18：安装Android Studio</h4>
-                                    <pre class="program"><code class="language-powershell">yaourt -S android-studio</code></pre>
-                                    <h4>19：安装sublime text</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)安装GPG key：</p><pre class="program"><code class="language-powershell">curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)选择稳定版本：</p><pre class="program"><code class="language-powershell">echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)更新并安装：</p><pre class="program"><code class="language-powershell">sudo pacman -Syu sublime-text</code></pre>
-                                    <h4>20：安装配置tomcat</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)去官网下载tomcat压缩包(后缀名：tar.gz)<a target="_blank" href="https://tomcat.apache.org/download-90.cgi">tomcat官网下载</a></p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)在opt文件夹下创建tomcat文件夹：</p><pre class="program"><code class="language-powershell">sudo mkdir /opt/tomcat</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)将下载好的压缩包解压到第(2)步创建好的文件夹：</p><pre class="program"><code class="language-powershell">sudo tar -zxvf xxx.tar.gz -C /opt/tomcat</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)切换到解压后文件夹的根目录：</p><pre class="program"><code class="language-powershell">cd /opt/tomcat/xxx</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)赋予安装文件执行权限：</p><pre class="program"><code class="language-powershell">sudo chmod a=+rx bin/startup.sh</code></pre>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)执行安装文件：</p><pre class="program"><code class="language-powershell">sudo bin/startup.sh</code></pre>
-                                    <h4>21：idea下配置tomcat流程</h4>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置请参考：<a target="_blank" href="https://blog.csdn.net/qq_31914787/article/details/82529893">tomcat与idea结合</a></p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配置中出现的端口越界或被占用等无法使用的问题：修改端口为8686</p>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解决idea运行时输出乱码：<a target="_blank" href="https://blog.csdn.net/weixin_42443070/article/details/88085762">解决idea运行输出乱码</a></p>
-
+                                    <h3>Deepin OS基本配置</h3>
+                                    <h4>请参考：<a target="_blank" href="https://mp.weixin.qq.com/s/5pGezm2xcfOez7yDcYCgYA">Deepin配置指南</a></h4>
                                     <!--div class="two-column">
                                         <div class="row">
                                             <div class="image-column col-xl-6 col-lg-12 col-md-12 col-sm-12">

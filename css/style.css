@@ -528,7 +528,7 @@ ul,li{
 	background-color:#ffffff; 
 	background-position:center center; 
 	background-repeat:no-repeat; 
-	background-image:url(../images/icons/preloader.svg);
+	background-image:url(../images/icons/preloader.gif);
 }
 
 img{
@@ -8097,7 +8097,7 @@ a.ui-button:active, .ui-button:active,
 .blog-detail p{
 	position: relative;
 	display: block;
-	font-size: 15px;
+	font-size: 17px;
 	line-height: 28px;
 	color: #777777;
 	font-weight: 400;
@@ -9163,7 +9163,8 @@ a.ui-button:active, .ui-button:active,
 }
 
 .sidebar-page-container.left-sidebar .content-side{
-	order: 12;
+	/*order:12*/
+	order: inherit;
 }
 
 .sidebar-widget{

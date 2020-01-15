@@ -24,7 +24,8 @@
 }
 
 .color-palate-head {
-    background: #92c800 none repeat scroll 0 0;
+    /*background: #92c800 none repeat scroll 0 0;*/
+    background: #14c599 none repeat scroll 0 0;
     padding: 15px 0;
 }
 
@@ -91,6 +92,10 @@
 }
 
 .palate.default-color {
+    background: #14c599 none repeat scroll 0 0;
+}
+
+.palate.teal-color {
     background: #92c800 none repeat scroll 0 0;
 }
 
@@ -110,10 +115,6 @@
     background: #bb54e1 none repeat scroll 0 0;
 }
 
-.palate.teal-color {
-    background: #14c599 none repeat scroll 0 0;
-}
-
 .palate.orange-color {
     background: #ff7e00 none repeat scroll 0 0;
 }
@@ -123,7 +124,8 @@
 }
 
 .color-trigger {
-    background: #92c800 none repeat scroll 0 0;
+    /*background: #92c800 none repeat scroll 0 0;*/
+    background: #14c599 none repeat scroll 0 0;
     cursor: pointer;
     height: 50px;
     right: -46px;
@@ -158,7 +160,8 @@
     content: "\f00d";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    background-color: #92c800;
+    /*background-color: #92c800;*/
+    background-color: #14c599;
     z-index: 1;
     opacity: 0;
     visibility: hidden;
@@ -211,7 +214,8 @@
     line-height: 20px;
     padding: 5px 18px;
     text-align: center;
-    background-color: #92c800;
+    /*background-color: #92c800;*/
+    background-color: #14c599;
     color: #ffffff;
     cursor: pointer;
     border-radius: 5px;
@@ -252,7 +256,8 @@
 }
 
 .color-palate .purchase-btn:hover{
-    background-color: #92c800;
+    /*background-color: #92c800;*/
+    background-color: #14c599;
 }
 
 

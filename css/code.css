@@ -1,0 +1,103 @@
+.program {
+    color:lightgray;
+    opacity:.7;
+    font-weight:500;
+    font-style:italic;
+    font-family: Consolas, serif;
+    font-size:0.6em;
+    margin:1.2em 0;
+    width: 100%;
+}
+
+
+.program .token-keyword {
+    color: saddlebrown;
+}
+
+.program  .token-punctuation {
+    color: #0d95e8;
+}
+
+.program .token-function {
+    color: darkgoldenrod;
+}
+
+.program  .token-string {
+    color: green;
+}
+
+.program .token-annotation {
+    color: darkgreen;
+}
+
+.program .token-operator{
+    color: #7127AC;
+}
+
+.program .token-operator-word{
+    color: #7127AC;
+}
+
+
+/*java代码的格式*/
+.program  .language-java {
+    /*font-family:monospace,monospace;*/
+    font-family: Consolas, serif;
+    font-size:2em;
+    /*background-color:rgba(0,0,0,.05);*/
+    background-color: black;
+    border-radius:3px;
+    padding:2px 4px;
+    width: 100%;
+}
+.program>.language-java{
+    background-color: black;
+    display:block;padding:.5em;
+    -webkit-text-size-adjust:none;
+    overflow-x:auto;
+    white-space:pre-wrap;
+    width: 100%;
+}
+
+
+/*powershell代码格式*/
+.program  .language-powershell {
+    /*font-family:monospace,monospace;*/
+    font-family: Consolas, serif;
+    font-size:2em;
+    /*background-color:rgba(0,0,0,.05);*/
+    background-color: black;
+    border-radius:3px;
+    padding:2px 4px;
+    width:100%;
+}
+.program>.language-powershell{
+    background-color: black;
+    display:block;padding:.5em;
+    -webkit-text-size-adjust:none;
+    overflow-x:auto;
+    /*保留空白符序列，但是正常地进行换行。*/
+    white-space:pre-wrap;
+    width: 100%;
+}
+
+
+/*C语言代码格式*/
+.program  .language-c {
+    /*font-family:monospace,monospace;*/
+    font-family: Consolas, serif;
+    font-size:2em;
+    /*background-color:rgba(0,0,0,.05);*/
+    background-color: black;
+    border-radius:3px;
+    padding:2px 4px;
+    width: 100%;
+}
+.program>.language-c{
+    background-color: black;
+    display:block;padding:.5em;
+    -webkit-text-size-adjust:none;
+    overflow-x:auto;
+    white-space:pre-wrap;
+    width: 100%;
+}
