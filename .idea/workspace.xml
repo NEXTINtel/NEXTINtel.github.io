@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86649ae3-b8cc-4735-b708-68231af98816" name="Default Changelist" comment="" />
+    <list default="true" id="32bf6ca5-635c-4f25-8238-c46aaf674944" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,38 +12,15 @@
       <executable />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1VqHk3a8QDoopo2TOHd7Ds1f8RZ" />
+  <component name="ProjectId" id="1WPZUsWFUME7WxDmFJA4HAqGpYL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TrainTickets/TrainTicket" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="ServiceViewManager">
@@ -63,17 +40,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86649ae3-b8cc-4735-b708-68231af98816" name="Default Changelist" comment="" />
-      <created>1577973846854</created>
+      <changelist id="32bf6ca5-635c-4f25-8238-c46aaf674944" name="Default Changelist" comment="" />
+      <created>1579053208704</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1577973846854</updated>
-      <workItem from="1577973855284" duration="11782000" />
-      <workItem from="1578018537459" duration="803000" />
-      <workItem from="1578024698038" duration="3474000" />
-      <workItem from="1578044067160" duration="4310000" />
-      <workItem from="1578067467416" duration="8532000" />
-      <workItem from="1578139298783" duration="8608000" />
+      <updated>1579053208704</updated>
+      <workItem from="1579053211817" duration="830000" />
     </task>
     <servers />
   </component>
@@ -81,15 +53,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-903" y="139" key="FileChooserDialogImpl" timestamp="1578075521415">
-      <screen x="-1366" y="0" width="1366" height="768" />
+    <state x="368" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1579053211859">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="-903" y="139" key="FileChooserDialogImpl/0.0.1366.768/-1366.0.1366.768@-1366.0.1366.768" timestamp="1578075521415" />
-    <state x="361" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1578139298767">
-      <screen x="0" y="0" width="1360" height="768" />
-    </state>
-    <state x="361" y="208" key="com.intellij.ide.util.TipDialog/0.0.1360.768@0.0.1360.768" timestamp="1578139298767" />
-    <state x="-1003" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1366.0.1366.768@-1366.0.1366.768" timestamp="1578067473837" />
-    <state x="363" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1366.0.1366.768@0.0.1366.768" timestamp="1577973898404" />
+    <state x="368" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579053211859" />
   </component>
 </project>
