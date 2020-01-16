@@ -528,7 +528,7 @@ ul,li{
 	background-color:#ffffff; 
 	background-position:center center; 
 	background-repeat:no-repeat; 
-	background-image:url(../images/icons/preloader.gif);
+	background-image:url(../images/icons/preloader3.gif);
 }
 
 img{
@@ -8101,7 +8101,8 @@ a.ui-button:active, .ui-button:active,
 	line-height: 28px;
 	color: #777777;
 	font-weight: 400;
-	margin-bottom: 28px;
+	margin-bottom: 10px;
+	padding-left: 2.5%;
 }
 
 .blog-detail blockquote{

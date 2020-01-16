@@ -15,11 +15,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
   <component name="ProjectId" id="1WPZUsWFUME7WxDmFJA4HAqGpYL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,6 +31,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utf8-php/third-party/codemirror" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
@@ -56,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579053208704</updated>
       <workItem from="1579053211817" duration="36115000" />
+      <workItem from="1579172882858" duration="16583000" />
     </task>
     <servers />
   </component>
@@ -63,22 +66,34 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="263" y="39" key="#CLI_Interpreters" timestamp="1579173502998">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="263" y="39" key="#CLI_Interpreters/0.0.1366.768@0.0.1366.768" timestamp="1579173502998" />
+    <state x="365" y="0" key="#PHP" timestamp="1579173508019">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="365" y="0" key="#PHP/0.0.1366.768@0.0.1366.768" timestamp="1579173508019" />
     <state x="433" y="219" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1579085920575">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="433" y="219" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.768@0.0.1366.768" timestamp="1579085920575" />
+    <state x="173" y="139" key="FileChooserDialogImpl" timestamp="1579181687287">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="173" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579181687287" />
     <state x="184" y="26" key="SettingsEditor" timestamp="1579093726882">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579093726882" />
-    <state x="368" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1579053211859">
+    <state x="368" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1579172883953">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="368" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579053211859" />
-    <state x="0" y="0" width="786" height="768" key="find.popup" timestamp="1579098155328">
+    <state x="368" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579172883953" />
+    <state x="0" y="0" width="786" height="768" key="find.popup" timestamp="1579182399253">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="0" y="0" width="786" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1579098155328" />
+    <state x="0" y="0" width="786" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1579182399253" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579101337730">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
